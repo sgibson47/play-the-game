@@ -58,6 +58,7 @@ Game Play in detail:
             - alert displayed to user that move cannot be made
     Repeat Play at least once more (must play at least 2 cards per turn)
         How to keep track of how many cards have been played to ensure player plays at least 2 cards?
+         - some sort of counter that gets cleared when the player confirms that their turn is complete?
     Confirm turn is complete
       - after second play ask if player would like to play another card
         if yes,
@@ -70,3 +71,60 @@ Game Play in detail:
 
 
   maybe move Draw up to 7 to start of a turn? 
+
+How am I gonna model this stuff?
+  - Game
+    id
+    status: boolean
+    playerName  
+      -- for the leader board?
+        Ask for at outset of game? 
+        or 
+        Ask for when game is completed?    
+      -- maybe later 
+        set up a player/user model
+        set up log in
+        make games 
+          public (other users can play on your saved game) 
+          or 
+          private (only the creator may view & play)
+
+  has many cards through Piles, Hands, and Decks
+  
+  - Card
+    id
+    number
+    pileId
+    handId
+    deckId
+  belongs to deck
+  belongs to hand
+  belongs to pile
+
+  - Pile
+    id
+    type: [ASC, DESC]
+    gameId
+  belongs to game
+  has many cards
+
+  - Deck
+    id
+    gameId
+  belongs to game
+  has many cards
+
+  - Hand
+    id
+    gameId
+  belongs to game
+  has many cards
+
+Initialize a game with a Deck containing 98 cards numbered 2-99.
+
+Move cards from the game's deck to hand to pile as the game is played.
+
+
+
+
+
