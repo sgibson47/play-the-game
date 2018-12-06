@@ -100,6 +100,17 @@ How am I gonna model this stuff?
   belongs to deck
   belongs to hand
   belongs to pile
+  TROUBLE -- with this, I can't save a card that only has a deck_id but no hand_id or pile_id
+
+  How're we going to keep track of where a card is at a given point in the game?
+
+  hmmm. 
+
+  time to learn about polymorphic associations
+
+  
+
+
 
   - Pile
     id
