@@ -1,5 +1,3 @@
 class Card < ApplicationRecord
-  belongs_to :pile
-  belongs_to :hand
-  belongs_to :deck
+  belongs_to :whereIsCard, polymorphic: true
 end

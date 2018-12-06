@@ -89,51 +89,45 @@ How am I gonna model this stuff?
           or 
           private (only the creator may view & play)
 
-  has many cards through Piles, Hands, and Decks
+  has_many :piles
+  has_one :deck
+  has_one :hand
   
   - Card
     id
-    number
-    pileId
-    handId
-    deckId
-  belongs to deck
-  belongs to hand
-  belongs to pile
-  TROUBLE -- with this, I can't save a card that only has a deck_id but no hand_id or pile_id
+    value
+    whereIsCard_id
+    whereIsCard_type
 
-  How're we going to keep track of where a card is at a given point in the game?
-
-  hmmm. 
-
-  time to learn about polymorphic associations
-
-  
-
-
+  belongs_to :whereIsCard, polymorphic: true
 
   - Pile
     id
     type: [ASC, DESC]
     gameId
-  belongs to game
-  has many cards
+  
+  belongs_to :game
+  has_many :cards, as: :whereIsCard
 
   - Deck
     id
     gameId
-  belongs to game
-  has many cards
+  
+  belongs_to :game
+  has_many :cards, as: :whereIsCard
 
   - Hand
     id
     gameId
-  belongs to game
-  has many cards
+  
+  belongs_to :game
+  has_many :cards, as: :whereIsCard
 
-Initialize a game with a Deck containing 98 cards numbered 2-99, an empty hand, 2 ASC (1) piles, and 2 DESC (100) piles.
+Initialize a game with a Deck containing 98 cards numbered 2-99, an empty hand, 2 empty ASC (1) piles, and 2 empty DESC (100) piles.
 
 Move cards from the game's deck to hand to pile as the game is played.
+
+  
 
 
 

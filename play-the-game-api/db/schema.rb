@@ -10,21 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_212722) do
+ActiveRecord::Schema.define(version: 2018_12_06_204846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.bigint "pile_id"
-    t.bigint "hand_id"
-    t.bigint "deck_id"
+    t.integer "value"
+    t.string "whereIsCard_type"
+    t.bigint "whereIsCard_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "value"
-    t.index ["deck_id"], name: "index_cards_on_deck_id"
-    t.index ["hand_id"], name: "index_cards_on_hand_id"
-    t.index ["pile_id"], name: "index_cards_on_pile_id"
+    t.index ["whereIsCard_type", "whereIsCard_id"], name: "index_cards_on_whereIsCard_type_and_whereIsCard_id"
   end
 
   create_table "decks", force: :cascade do |t|
@@ -56,9 +53,6 @@ ActiveRecord::Schema.define(version: 2018_12_06_212722) do
     t.index ["game_id"], name: "index_piles_on_game_id"
   end
 
-  add_foreign_key "cards", "decks"
-  add_foreign_key "cards", "hands"
-  add_foreign_key "cards", "piles"
   add_foreign_key "decks", "games"
   add_foreign_key "hands", "games"
   add_foreign_key "piles", "games"
