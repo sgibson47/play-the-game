@@ -120,7 +120,7 @@ How am I gonna model this stuff?
   belongs to game
   has many cards
 
-Initialize a game with a Deck containing 98 cards numbered 2-99.
+Initialize a game with a Deck containing 98 cards numbered 2-99, an empty hand, 2 ASC (1) piles, and 2 DESC (100) piles.
 
 Move cards from the game's deck to hand to pile as the game is played.
 
