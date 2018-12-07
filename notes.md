@@ -127,6 +127,24 @@ Initialize a game with a Deck containing 98 cards numbered 2-99, an empty hand, 
 
 Move cards from the game's deck to hand to pile as the game is played.
 
+
+NEXT STEPS:
+
+1. Figure out how you want to update a game each time a card moves
+    can we update the game 
+    or 
+    are there too many layers of data
+      if so, maybe we set up a controller action that just changes the Deck, Pile & Hand?
+
+2. Once you can move a card from deck to hand, hand to pile, ... etc., Figure out how you're going to build a turn
+    at least 2 cards played
+    check if game is over
+    deal up to 7 cards to player
+
+3. Separate button to save a game? or create upon starting a new game and save changes each turn
+
+4. Index of all the games (click on a game and go to its show page where you can play it)
+
   
 
 
