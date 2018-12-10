@@ -38,7 +38,27 @@ class Api::GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:status, :playerName)
+    params.require(:game).permit(:status, :playerName, 
+      piles_attributes:[
+        :id,
+        :asc,
+        :game_id,
+        cards_attributes: [
+          :id,
+          :value,
+          :whereIsCard_type,
+          :whereIsCard_id
+        ]
+      ],
+      deck_attribues:[
+        :id,
+        :game_id
+      ],
+      hand_attribues:[
+        :id,
+        :game_id
+      ]
+    )
   end
 
   def set_game
