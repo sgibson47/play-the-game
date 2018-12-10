@@ -4,14 +4,25 @@ import PileCard from '../components/PileCard'
 class Pile extends Component {
   
 
-  topCard = () => this.props.pile.cards.slice(-1)[0];
+  topCardValue = () => {
+    const cards = this.props.pile.cards
+    if(cards.length === 0){
+      return "No cards have been played on this pile, yet."
+    }else if (cards.type === "active_record/associations/collection_proxy") {
+      return "No cards have been played on this pile, yet."
+    }else{
+      return cards.slice(-1)[0].value;
+    }
+  }
+
+  
 
   anchor = () => {
     if(this.props.pile.asc === true){
       return 1
     } else {
        return 100
-    };
+    }
   }
 
   type = () => {
@@ -19,7 +30,7 @@ class Pile extends Component {
       return "Up"
     } else {
        return "Down"
-    };
+    }
   }
 
   
@@ -29,7 +40,7 @@ class Pile extends Component {
       <div className="pile">
         <p>Count {this.type()}</p>
         <PileCard value ={this.anchor()}/>
-        <PileCard value={this.topCard().value}/> 
+        <PileCard value={this.topCardValue()}/> 
       </div>
     )
   }

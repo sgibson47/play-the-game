@@ -6,7 +6,7 @@ class Hand extends Component {
     return(
       <div className="Hand">
         {this.props.cards.map(card =>
-          <HandCard value={card.value}/>
+          <HandCard value={card.value} key={card.id} />
         )}
       </div>
     )
