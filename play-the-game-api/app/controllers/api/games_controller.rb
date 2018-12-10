@@ -16,6 +16,23 @@ class Api::GamesController < ApplicationController
     else
       render json:{message: game.errors}, status: 400
     end
+
+    # every new game
+    # make a new game with the playerName
+      # game = Game.new(game_params)
+    # make a deck
+      # game.deck.create
+    # give the deck cards 2-99, already shuffled
+      # (2..99).to_a.shuffle!.each do |value|
+      #   game.deck.cards.create({"value": value})
+      # end
+    # make a hand
+      # game.hand.create
+    # make 2 asc piles
+      # 2.times{game.piles.create({"asc":true})}
+    # make 2 desc piles
+      # 2.times{game.piles.create({"asc":false})}
+
   end
 
   def update
