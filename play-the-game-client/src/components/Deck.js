@@ -3,7 +3,7 @@ import React from 'react'
 const Deck = (props) => (
   <div className="deck">
     {props.cardsLeft}
-    <p>Cards To Go</p>
+    <p>Cards left in the Deck</p>
   </div>
 )
 
