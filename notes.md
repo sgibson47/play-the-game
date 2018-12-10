@@ -145,7 +145,92 @@ NEXT STEPS:
 
 4. Index of all the games (click on a game and go to its show page where you can play it)
 
-  
+
+
+How're we gonna render a game?
+
+App
+  Game - needs to know all the things about a single game
+    Deck -  needs to know how many cards remain
+    Piles - needs to know about a collection of piles
+      Pile 
+      Pile
+      Pile
+      Pile
+        needs to know its type (ASC/DESC) and the value of its top most card
+        needs to listen for a click (selecting a pile to play a card on)
+    Hand - needs to know about the cards it holds 0 - 7 
+      Card 
+      Card
+      Card
+      Card
+      Card
+      Card
+      Card
+        needs to know its value
+        needs to listen for click (selecting the card to play)
+        needs to indicate if a card has been played . . . 
+          do I conditionally render the cards and then have them disappear/not render once they're played?
+          nah, move the card (-- just move data around the store? interact with the backend? yuck, probably not interact with the backend each move, but maybe at the end of each turn? --) & have the components re render
+
+  somebody 
+    Deal 7 cards from the deck to Hand
+    once a card and pile have been selected, pop up confirmation questions "Do you want to make this move?"
+    check if move is valid
+    move card
+    check how many cards have been played this turn
+    once two cards have been played, render button to end turn
+
+
+Store?
+  {
+    currentGame: {
+      {
+        id: 1,
+        status: null,
+        playerName: null,
+        piles: [
+          {
+          id: 1,
+          asc: null,
+          game_id: 1,
+          cards: [
+            {
+              id: 2,
+              value: 43,
+              whereIsCard_type: "Pile",
+              whereIsCard_id: 1,
+              created_at: "2018-12-07T22:34:28.507Z",
+              updated_at: "2018-12-07T22:34:43.423Z"
+            }
+          ]
+          }
+        ],
+        deck: {
+          id: 1,
+          game_id: 1,
+          cards: [
+            {
+            id: 1,
+            value: null,
+            whereIsCard_type: "Deck",
+            whereIsCard_id: 1,
+            created_at: "2018-12-07T22:15:03.092Z",
+            updated_at: "2018-12-07T22:15:03.092Z"
+            }
+          ]
+        },
+        hand: {
+          id: 1,
+          game_id: 1,
+          cards: {
+            type: "active_record/associations/collection_proxy",
+            active_record/associations/collection_proxy: [ ]
+          }
+        }
+      }
+    }
+  }
 
 
 
