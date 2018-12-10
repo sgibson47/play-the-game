@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Card from '../components/Card'
+import PileCard from '../components/PileCard'
 
 class Pile extends Component {
   
@@ -27,9 +27,9 @@ class Pile extends Component {
   render(){
     return(
       <div className="pile">
-        <p>Count {this.type()} on this Pile from</p>
-        <Card value ={this.anchor()}/>
-        <Card value={this.topCard().value}/>
+        <p>Count {this.type()}</p>
+        <PileCard value ={this.anchor()}/>
+        <PileCard value={this.topCard().value}/> 
       </div>
     )
   }

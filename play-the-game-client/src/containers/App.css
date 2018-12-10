@@ -4,13 +4,64 @@
 
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.game{
+  background-color: #5a5e66; 
+  overflow: auto;
+  padding: 2%;
+}
+
+.deck {
+  background-color: #a7bfe8;
+  width: 125px;
+  height: 175px;
+  border-radius: 7px;
+  margin-left: 30%;
+}
+
+.piles{
+  clear: left;
+}
+
+.pile{
+  background-color: #314566 ;
+  float: left;
+  width: 23%;
+  margin: 1%;
+}
+
+.PileCard{
+  background-color: #a7bfe8;
+  width: 40%;
+  border-radius: 7px;
+  width: 125px;
+  height: 175px;
+  float: left;
+  margin-left: 6.5%;
+  margin-bottom: 6%;
+}
+
+.Hand{
+  background-color: #314566;
+  padding: 1%;
+  overflow: auto;
+  width: 75%;
+  margin-left: 10%;
+}
+
+.HandCard{
+  background-color: #a7bfe8;
+  width: 125px;
+  height: 175px;
+  float: left;
+  margin: 6px;
+  border-radius: 7px;
+}
+
 

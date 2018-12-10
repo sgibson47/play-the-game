@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import Card from '../components/Card'
+import HandCard from '../components/HandCard'
 
 class Hand extends Component {
   render(){
     return(
-      <div className="hand">
+      <div className="Hand">
         {this.props.cards.map(card =>
-          <Card value={card.value}/>
+          <HandCard value={card.value}/>
         )}
       </div>
     )
