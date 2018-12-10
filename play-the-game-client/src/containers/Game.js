@@ -5,6 +5,7 @@ import Piles from './Piles'
 
 class Game extends Component {
   render(){
+    debugger
     return(
       <div className="game">
         <Deck cardsLeft={this.props.game.deck.cards.length}/>

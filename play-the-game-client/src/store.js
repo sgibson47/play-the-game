@@ -3,21 +3,11 @@ import {
   applyMiddleware,
   combineReducers
 } from 'redux'
-
 import thunk from 'redux-thunk'
-
-const gameReducer = (state = {}, action) => {
-  switch(action.type){
-    case 'GET_CURRENT_GAME_SUCCESS':
-      return action.game;
-
-    default:
-      return state;
-  }
-}
+import game from './reducers/game'
 
 const reducers = combineReducers({
-  currentGame: gameReducer
+  game
 });
 
 const middleware = [thunk];
