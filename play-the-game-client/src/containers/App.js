@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   render(){
-    debugger
     return(
       <div className="App">
         <h1>Play The Game</h1>
@@ -25,7 +24,8 @@ class App extends Component {
 
 const mapStateToProps = (state) =>{
   return({
-    currentGame: state.currentGame
+    currentGame: state.game,
+    selectedCard: state.selectedCard
   })
 }
 

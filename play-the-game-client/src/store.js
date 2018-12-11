@@ -5,9 +5,11 @@ import {
 } from 'redux'
 import thunk from 'redux-thunk'
 import game from './reducers/game'
+import selectedCard from './reducers/selectedCard'
 
 const reducers = combineReducers({
-  game
+  game,
+  selectedCard
 });
 
 const middleware = [thunk];

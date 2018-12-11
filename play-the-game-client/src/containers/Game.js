@@ -5,10 +5,11 @@ import Piles from './Piles'
 
 class Game extends Component {
   render(){
-    debugger
     return(
       <div className="game">
-        
+        <Deck cardsLeft={this.props.currentGame.deck.cards.length}/>
+        <Piles piles={this.props.currentGame.piles}/>
+        <Hand cards={this.props.currentGame.hand.cards}/>
       </div>
     )
   }
@@ -16,6 +17,3 @@ class Game extends Component {
 
 export default Game;
 
-// <Deck cardsLeft={this.props.currentGame.deck.cards.length}/>
-//         <Piles piles={this.props.game.piles}/>
-//         <Hand cards={this.props.game.hand.cards}/>
