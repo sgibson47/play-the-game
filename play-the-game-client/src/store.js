@@ -14,6 +14,6 @@ const middleware = [thunk];
 
 export default createStore(
   reducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_(),
   applyMiddleware(...middleware)
 )

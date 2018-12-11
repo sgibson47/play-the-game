@@ -54,9 +54,11 @@ const initialState =
 export default (state = initialState, action) => {
   switch(action.type){
     case 'GET_GAME_SUCCESS':
-      return { ...state, currentGame: ...action.currentGame};
+      return state
+      // Object.assign({}, state, action.currentGame)
     case 'SELECT_CARD':
-      return {...state, selectedCard: ...action.selectedCard}
+      return state
+      // Object.assing({}, state, action.selectedCard)
 
     default:
       return state;
