@@ -8,7 +8,11 @@ class Game extends Component {
     return(
       <div className="game">
         <Deck cardsLeft={this.props.currentGame.deck.cards.length}/>
-        <Piles piles={this.props.currentGame.piles}/>
+        <Piles 
+          piles={this.props.currentGame.piles}
+          selectPile={this.props.selectPile}
+          deselectPile={this.props.deselectPile}
+        />
         <Hand 
           cards={this.props.currentGame.hand.cards} 
           selectedCard={this.props.selectedCard}

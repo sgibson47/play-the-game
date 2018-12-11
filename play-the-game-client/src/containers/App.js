@@ -21,6 +21,8 @@ class App extends Component {
           selectedCard={this.props.selectedCard}
           selectCard={this.props.selectCard}
           deselectCard={this.props.deselectCard}
+          selectPile={this.props.selectPile}
+          deselectPile={this.props.deselectPile}
         />
       </div>
     )
