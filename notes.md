@@ -184,7 +184,7 @@ App
 
 Store?
   {
-    currentGame: {
+    game: {
       {
         id: 1,
         status: null,
@@ -229,10 +229,43 @@ Store?
           }
         }
       }
-    }
+    },
+    card:
   }
 
+Let's get a valid move working. 
 
+We need to
+    needs to listen for click on Card (selecting the card to play)
+    needs to listen for a click on Pile (selecting a pile to play a card on)
+    once both a pile and a card have been selected
+        check to see if it's a valid move 
+        If yes, 
+          pop up confirmation questions "Do you want to make this move?"
+          if yes,
+            make move,
+             ...
+          if no,
+            clear the sotre object holding selections
+        If no, 
+          alert "That's not a valid move."
+          clear the store object holding selections
+
+
+
+    ok how are we going to "make a move"
+    we need to (this takes communicating with the db)
+      update the card's whereIsCard_type attribute to "Pile"
+      update the card's whereIsCard_id attribute to the Pile's Id
+    update the cards played this turn counter (it reachign 2 should trigger rendering an "End Turn" that will reset the counter and deal up to 7 cards to the player ... dealing is also gonna take interaction with the db ... booo. I should have just had cards belong_to a game and a game has_many cards then given cards a deck, hand, pile1, pil2, pile3, and pile4 boolean attributes. Then I could indicate that a card is in the deck by setting card.deck = true & setting the rest of the possible locations to false.  Grrrr. . .  I made it more complicated.)
+
+    But back, to the system you've set up. 
+    You want to send info about a card and a pile, what do you want to get back after the request? The whole game again . . . that seems useless.  I'm starting to think we don't need to send all the cards in the deck or most of the cards in each pile up either.  
+
+    you need the cards in Hand for sure, then you just need  a count of cards in the deck, and the top most card of each pile. yurp. 
+
+    let's decide when we get to futzign with the back end. 
+    For now, let's start with setting up our listeners, alerts, and storing selections in the redux store. 
 
 
 
