@@ -273,5 +273,49 @@ We need to
 
     need to ensure that when we select a second card or pile, the first one we selected in deselected
 
+    --------
+
+    maybe determine HandCardClassName based on id of selectedCard, not based on local state
+
+    if(card.id === selectedCard.id){
+      return "SelectedHandCard"
+    }else{
+      return "HandCard"
+    }
+
+    then if two cards are selected the first will go back to normal after the second is selected
+
+    & same concept for Pile -- determine this at highest shared component & pass down?
+
+    --------
+
+    set up store.moves to hold card_id & pile_id so we have info to update db at end of each turn
+
+    when store.moves.length >=2 render component with "End turn?"
+
+    -------
+
+    set up a component that renders when selectedCard & selectedPile's ids are !== 0 i.e. when a card and a pile have been selected
+
+    it should ask if player wants to make this move, 
+    if yes, 
+      check if valid move
+        if yes, 
+          store move in store.moves
+          update top most card of pile
+            this is gonna take some adjusting b/c right now we're doing this based on pile from db
+            we can change the store for sure
+            but, maybe we also want to change what data the api is providing
+            b/c we really don't need all the cards
+          indicate that card has been played so it isn't shown to player any more
+          deselectCard and deselectPile
+        if no, 
+          alert that move is invalid
+          deselectCard and deselectPile
+    if no, 
+      deselectCard and deselectPile
+      (this should make prompt go away)
+
+
 
 

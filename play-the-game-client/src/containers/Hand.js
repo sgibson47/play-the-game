@@ -2,11 +2,20 @@ import React, {Component} from 'react';
 import HandCard from '../components/HandCard'
 
 class Hand extends Component {
-  render(){
-    return(
-      <div className="Hand">
-        <h3>Your hand:</h3>
-        {this.props.cards.map(card =>
+    
+
+  // handCardClassName = () => {
+  //   if(this.props.played === "false" && this.props.selectedCard.id === false){
+  //     return "HandCard"
+  //   }else if(this.props.played === "false" && this.state.selected === true){
+  //     return "SelectedHandCard"
+  //   }else if(this.props.played === "true"){
+  //     return "HiddenHandCard"
+  //   }
+  // }
+
+  createHandCards = () => {
+    return this.props.cards.map(card =>
           <HandCard 
             card={card} 
             key={card.id} 
@@ -14,7 +23,15 @@ class Hand extends Component {
             selectCard={this.props.selectCard}
             deselectCard={this.props.deselectCard}
           />
-        )}
+        )
+  };
+
+
+  render(){
+    return(
+      <div className="Hand">
+        <h3>Your hand:</h3>
+        {this.createHandCards()}
       </div>
     )
   }

@@ -5,10 +5,6 @@ class HandCard extends Component {
     super(props);
     this.state={
       selected: false,
-      //played: false
-      //maybe played should be props, not state
-      // the card won't know if it's been played,
-      //but the game component will
     }
   }
 
@@ -24,10 +20,6 @@ class HandCard extends Component {
 
 
   handleOnClick = (event) =>{
-    //some code to dispatch an update to the store
-    //some code to update local state and trigger visual indication that card was selected
-    // ooo ooo local state can control whether card is displayed or not and how it is displayed (selected or not)
-
     if(this.state.selected){
       this.setState({selected: false})
       this.props.deselectCard()
