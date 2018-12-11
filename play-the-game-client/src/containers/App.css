@@ -36,6 +36,13 @@
   margin: 1%;
 }
 
+.SelectedPile{
+  background-color: #b9c0cc ;
+  float: left;
+  width: 23%;
+  margin: 1%;
+}
+
 .PileCard{
   background-color: #a7bfe8;
   width: 40%;

@@ -7,7 +7,12 @@ class Piles extends Component {
       <div className="piles">
         <h3>Piles you can play on:</h3>
         {this.props.piles.map(pile =>
-          <Pile key={pile.id} pile={pile}/>
+          <Pile 
+            key={pile.id} 
+            pile={pile}
+            selectPile={this.props.selectPile}
+            deselectPile={this.props.deselectPile}
+          />
         )}
       </div>
     )
