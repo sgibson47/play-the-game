@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css'
 import Game from './Game'
 import {connect} from 'react-redux'
-import {getGame, selectCard, deselectCard} from '../actions/game'
+import {getGame, selectCard, deselectCard, selectPile, deselectPile } from '../actions/game'
 
 const API_URL = "http://localhost:3001/api"
 
@@ -34,4 +34,4 @@ const mapStateToProps = (state) =>{
   })
 }
 
-export default connect(mapStateToProps, {getGame, selectCard, deselectCard})(App);
+export default connect(mapStateToProps, {getGame, selectCard, deselectCard, selectPile, deselectPile})(App);
