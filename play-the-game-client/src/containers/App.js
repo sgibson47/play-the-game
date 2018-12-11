@@ -17,7 +17,7 @@ class App extends Component {
     return(
       <div className="App">
         <h1>Play The Game</h1>
-        <Game game={this.props.game}/>
+        <Game currentGame={this.props.currentGame}/>
       </div>
     )
   }
@@ -25,7 +25,7 @@ class App extends Component {
 
 const mapStateToProps = (state) =>{
   return({
-    game: state.game
+    currentGame: state.currentGame
   })
 }
 

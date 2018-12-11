@@ -1,11 +1,17 @@
 const API_URL = "http://localhost:3001/api"
 
 //** Action Creators **
-
-const setGame = game => {
+const setGame = currentGame => {
   return{
     type: 'GET_GAME_SUCCESS',
-    game
+    currentGame
+  }
+}
+
+const selectCard = selectedCard => {
+  return{
+    type: 'SELECT_CARD',
+    selectedCard
   }
 }
 
@@ -18,3 +24,4 @@ export const getGame = () =>{
       .catch(error => console.log(error))
   }
 }
+

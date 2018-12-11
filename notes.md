@@ -265,7 +265,7 @@ We need to
     you need the cards in Hand for sure, then you just need  a count of cards in the deck, and the top most card of each pile. yurp. 
 
     let's decide when we get to futzign with the back end. 
-    For now, let's start with setting up our listeners, alerts, and storing selections in the redux store. 
+    For now, let's start with setting up our listeners, alerts, and storing selections in the redux store.
 
 
 

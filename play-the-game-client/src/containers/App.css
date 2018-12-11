@@ -64,4 +64,17 @@
   border-radius: 7px;
 }
 
+.SelectedHandCard{
+  background-color: #5a5e66;
+  width: 125px;
+  height: 175px;
+  float: left;
+  margin: 6px;
+  border-radius: 7px;
+}
+
+.HiddenHandCard{
+  display: none;
+}
+
 

@@ -8,12 +8,14 @@ class Game extends Component {
     debugger
     return(
       <div className="game">
-        <Deck cardsLeft={this.props.game.deck.cards.length}/>
-        <Piles piles={this.props.game.piles}/>
-        <Hand cards={this.props.game.hand.cards}/>
+        
       </div>
     )
   }
 }
 
 export default Game;
+
+// <Deck cardsLeft={this.props.currentGame.deck.cards.length}/>
+//         <Piles piles={this.props.game.piles}/>
+//         <Hand cards={this.props.game.hand.cards}/>
