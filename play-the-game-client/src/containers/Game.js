@@ -9,7 +9,11 @@ class Game extends Component {
       <div className="game">
         <Deck cardsLeft={this.props.currentGame.deck.cards.length}/>
         <Piles piles={this.props.currentGame.piles}/>
-        <Hand cards={this.props.currentGame.hand.cards}/>
+        <Hand 
+          cards={this.props.currentGame.hand.cards} 
+          selectedCard={this.props.selectedCard}
+          selectCard={this.props.selectCard}
+        />
       </div>
     )
   }

@@ -8,7 +8,7 @@ const setGame = currentGame => {
   }
 }
 
-const selectCard = selectedCard => {
+export const selectCard = selectedCard => {
   return{
     type: 'SELECT_CARD',
     selectedCard

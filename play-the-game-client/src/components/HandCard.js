@@ -30,7 +30,7 @@ class HandCard extends Component {
 
     if(this.state.selected){
       this.setState({selected: false})
-      // dispatch action type "SELECT_CARD" -- this.props.selectCard()
+      this.props.selectCard(this.props.card)
     }else{
       this.setState({selected: true})
       // dispatch action type "DESELECT_CARD" -- this.props.deselectCard()
@@ -41,7 +41,7 @@ class HandCard extends Component {
   render(){
     return (
       <div className={`${this.handCardClassName()}`} onClick={this.handleOnClick}>
-        {this.props.value}
+        {this.props.card.value}
       </div>
     )
   }

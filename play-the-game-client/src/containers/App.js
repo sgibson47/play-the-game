@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css'
 import Game from './Game'
 import {connect} from 'react-redux'
-import {getGame} from '../actions/game'
+import {getGame, selectCard} from '../actions/game'
 
 const API_URL = "http://localhost:3001/api"
 
@@ -16,7 +16,11 @@ class App extends Component {
     return(
       <div className="App">
         <h1>Play The Game</h1>
-        <Game currentGame={this.props.currentGame}/>
+        <Game 
+          currentGame={this.props.currentGame} 
+          selectedCard={this.props.selectedCard}
+          selectCard={this.props.selectCard}
+        />
       </div>
     )
   }
@@ -29,4 +33,4 @@ const mapStateToProps = (state) =>{
   })
 }
 
-export default connect(mapStateToProps, {getGame})(App);
+export default connect(mapStateToProps, {getGame, selectCard})(App);

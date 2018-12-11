@@ -7,7 +7,7 @@ class Hand extends Component {
       <div className="Hand">
         <h3>Your hand:</h3>
         {this.props.cards.map(card =>
-          <HandCard value={card.value} key={card.id} played="false"/>
+          <HandCard card={card} key={card.id} played="false" selectCard={this.props.selectCard}/>
         )}
       </div>
     )
