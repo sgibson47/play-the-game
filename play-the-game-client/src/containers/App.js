@@ -32,7 +32,9 @@ class App extends Component {
 const mapStateToProps = (state) =>{
   return({
     currentGame: state.game,
-    selectedCard: state.selectedCard
+    selectedCard: state.selectedCard,
+    selctedPile: state.selctedPile,
+    moves: state.moves
   })
 }
 
