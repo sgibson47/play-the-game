@@ -21,6 +21,19 @@ export const deselectCard = () => {
   }
 }
 
+export const selectPile = selectedPile => {
+  return{
+    type: 'SELECT_PILE',
+    selectedPile
+  }
+}
+
+export const deselectPile = () => {
+  return{
+    type: 'DESELECT_PILE'
+  }
+}
+
 //** Async Actions **
 export const getGame = () =>{
   return dispatch => {
