@@ -267,5 +267,11 @@ We need to
     let's decide when we get to futzign with the back end. 
     For now, let's start with setting up our listeners, alerts, and storing selections in the redux store.
 
+    ----------
+
+    selected card and pile have been added to store
+
+    need to ensure that when we select a second card or pile, the first one we selected in deselected
+
 
 
