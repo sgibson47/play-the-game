@@ -15,6 +15,12 @@ export const selectCard = selectedCard => {
   }
 }
 
+export const deselectCard = () => {
+  return{
+    type: 'DESELECT_CARD'
+  }
+}
+
 //** Async Actions **
 export const getGame = () =>{
   return dispatch => {

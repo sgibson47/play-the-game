@@ -12,6 +12,8 @@ export default (state = initialState, action) => {
   switch(action.type) {
     case 'SELECT_CARD':
       return action.selectedCard;
+    case 'DESELECT_CARD':
+      return initialState;
     
     default: 
       return state;

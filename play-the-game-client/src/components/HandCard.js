@@ -30,10 +30,10 @@ class HandCard extends Component {
 
     if(this.state.selected){
       this.setState({selected: false})
-      this.props.selectCard(this.props.card)
+      this.props.deselectCard()
     }else{
       this.setState({selected: true})
-      // dispatch action type "DESELECT_CARD" -- this.props.deselectCard()
+      this.props.selectCard(this.props.card)
     }
     
   }

@@ -13,6 +13,7 @@ class Game extends Component {
           cards={this.props.currentGame.hand.cards} 
           selectedCard={this.props.selectedCard}
           selectCard={this.props.selectCard}
+          deselectCard={this.props.deselectCard}
         />
       </div>
     )
