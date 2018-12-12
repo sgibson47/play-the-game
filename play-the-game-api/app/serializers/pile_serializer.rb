@@ -1,5 +1,9 @@
 class PileSerializer < ActiveModel::Serializer
-  attributes :id, :asc, :game_id
+  attributes :id, :asc, :game_id, :topMostCard
 
-  has_many :cards, polymorphic: true
+  # has_many :cards, polymorphic: true
+
+  def topMostCard
+    object.cards.last
+  end
 end
