@@ -316,6 +316,12 @@ We need to
       deselectCard and deselectPile
       (this should make prompt go away)
 
+ -----
+
+ let's start today with rewrorking the data provided by our api to better fit our needs on the client side
+    - just the number of cards in the deck
+    - just the top most card of a pile (or even just its value)
+
 
 
 
