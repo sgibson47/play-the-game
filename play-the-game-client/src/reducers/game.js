@@ -8,25 +8,25 @@ const initialState =
             id: 0,
             asc: true,
             game_id: 0,
-            topMostcard: {}
+            topMostcard: null
           },
           {
             id: 1,
             asc: true,
             game_id: 0,
-            topMostcard: {}
+            topMostcard: null
           },
           {
             id: 2,
             asc: false,
             game_id: 0,
-            topMostcard: {}
+            topMostcard: null
           },
           {
             id: 3,
             asc: false,
             game_id: 0,
-            topMostcard: {}
+            topMostcard: null
           }
         ],
         deck: {

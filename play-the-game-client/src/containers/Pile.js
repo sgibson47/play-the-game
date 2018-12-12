@@ -10,13 +10,11 @@ class Pile extends Component {
   }
 
   topCardValue = () => {
-    const cards = this.props.pile.cards
-    if(cards.length === 0){
-      return "No cards have been played on this pile, yet."
-    }else if (cards.type === "active_record/associations/collection_proxy") {
+    const topMostCard = this.props.pile.topMostCard
+    if(!topMostCard){
       return "No cards have been played on this pile, yet."
     }else{
-      return cards.slice(-1)[0].value;
+      return topMostCard.value;
     }
   }
 

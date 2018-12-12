@@ -7,7 +7,7 @@ class Game extends Component {
   render(){
     return(
       <div className="game">
-        <Deck cardsLeft={this.props.currentGame.deck.cards.length}/>
+        <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
         <Piles 
           piles={this.props.currentGame.piles}
           selectPile={this.props.selectPile}
