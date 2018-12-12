@@ -56,6 +56,14 @@ class Game extends Component {
     }
   }
 
+  playedAtLeastTwo = () =>{
+    if(this.props.moves.length < 2){
+      return false
+    }else{
+      return true
+    }
+  }
+
   render(){
     // console.log("From Game")
     // debugger
@@ -78,7 +86,7 @@ class Game extends Component {
           render={this.validMoveSelected()}
         />
         <BadMove render={this.invalidMoveSelected()}/>
-        <EndTurn />
+        <EndTurn render={this.playedAtLeastTwo()}/>
         <Hand 
           cards={this.props.currentGame.hand.cards}
           playedCardIds={this.playedCardIds()} 
