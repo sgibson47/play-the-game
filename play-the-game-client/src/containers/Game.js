@@ -86,7 +86,10 @@ class Game extends Component {
           render={this.validMoveSelected()}
         />
         <BadMove render={this.invalidMoveSelected()}/>
-        <EndTurn render={this.playedAtLeastTwo()}/>
+        <EndTurn 
+          render={this.playedAtLeastTwo()} 
+          updateGame={this.updateGame}
+        />
         <Hand 
           cards={this.props.currentGame.hand.cards}
           playedCardIds={this.playedCardIds()} 
