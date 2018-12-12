@@ -100,3 +100,11 @@
   display: none;
 }
 
+.EndTurn{
+  padding: 2%;
+}
+
+.HideEndTurn{
+  display: none;
+}
+
