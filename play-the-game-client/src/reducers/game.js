@@ -8,31 +8,31 @@ const initialState =
             id: 0,
             asc: true,
             game_id: 0,
-            cards: []
+            topMostcard: {}
           },
           {
             id: 1,
             asc: true,
             game_id: 0,
-            cards: []
+            topMostcard: {}
           },
           {
             id: 2,
             asc: false,
             game_id: 0,
-            cards: []
+            topMostcard: {}
           },
           {
             id: 3,
             asc: false,
             game_id: 0,
-            cards: []
+            topMostcard: {}
           }
         ],
         deck: {
           id: 0,
           game_id: 0,
-          cards: []
+          cardCount: -1
         },
         hand: {
           id: 0,
