@@ -6,9 +6,15 @@ class MakeMove extends Component {
     const move = {
       card_id: this.props.selectedCard.id,
       pile_id: this.props.selectedPile.id
-    }
+    };
+
+    const data = {
+      pile_id: this.props.selectedPile.id,
+      card: this.props.selectedCard
+    };
 
     this.props.addMove(move)
+    this.props.updateTopCard(data)
     this.props.deselectCard()
     this.props.deselectPile()
   }
