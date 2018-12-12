@@ -7,6 +7,8 @@ import MakeMove from '../components/MakeMove'
 class Game extends Component {
 
   render(){
+    // console.log("From Game")
+    // debugger
     return(
       <div className="game">
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
@@ -15,7 +17,13 @@ class Game extends Component {
           selectPile={this.props.selectPile}
           deselectPile={this.props.deselectPile}
         />
-        <MakeMove />
+        <MakeMove 
+          addMove={this.props.addMove}
+          selectedCard={this.props.selectedCard}
+          selectedPile={this.props.selectedPile}
+          deselectCard={this.props.deselectCard}
+          deselectPile={this.props.deselectPile}
+        />
         <Hand 
           cards={this.props.currentGame.hand.cards} 
           selectedCard={this.props.selectedCard}

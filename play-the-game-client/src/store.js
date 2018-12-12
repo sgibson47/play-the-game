@@ -7,7 +7,7 @@ import thunk from 'redux-thunk'
 import game from './reducers/game'
 import selectedCard from './reducers/selectedCard'
 import selectedPile from './reducers/selectedPile'
-import moves from './reducers/moves'
+import movesData from './reducers/moves'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
@@ -15,7 +15,7 @@ const reducers = combineReducers({
   game,
   selectedCard,
   selectedPile, 
-  moves
+  movesData
 });
 
 const middleware = [thunk];

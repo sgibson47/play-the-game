@@ -34,6 +34,13 @@ export const deselectPile = () => {
   }
 }
 
+export const addMove = move => {
+  return{
+    type: 'ADD_MOVE',
+    move
+  }
+}
+
 //** Async Actions **
 export const getGame = () =>{
   return dispatch => {
