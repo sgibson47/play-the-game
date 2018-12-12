@@ -2,17 +2,6 @@ import React, {Component} from 'react';
 import HandCard from '../components/HandCard'
 
 class Hand extends Component {
-    
-
-  // handCardClassName = () => {
-  //   if(this.props.played === "false" && this.props.selectedCard.id === false){
-  //     return "HandCard"
-  //   }else if(this.props.played === "false" && this.state.selected === true){
-  //     return "SelectedHandCard"
-  //   }else if(this.props.played === "true"){
-  //     return "HiddenHandCard"
-  //   }
-  // }
 
   createHandCards = () => {
     return this.props.cards.map(card =>
@@ -22,6 +11,7 @@ class Hand extends Component {
             played="false" 
             selectCard={this.props.selectCard}
             deselectCard={this.props.deselectCard}
+            selectedCard={this.props.selectedCard}
           />
         )
   };

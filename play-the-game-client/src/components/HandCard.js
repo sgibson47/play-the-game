@@ -9,12 +9,12 @@ class HandCard extends Component {
   }
 
   handCardClassName = () => {
-    if(this.props.played === "false" && this.state.selected === false){
-      return "HandCard"
-    }else if(this.props.played === "false" && this.state.selected === true){
-      return "SelectedHandCard"
-    }else if(this.props.played === "true"){
+    if(this.props.played === "true"){
       return "HiddenHandCard"
+    }else if(this.props.selectedCard.id === this.props.card.id){
+      return "SelectedHandCard"
+    }else {
+      return "HandCard"
     }
   }
 
