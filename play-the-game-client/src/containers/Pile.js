@@ -34,12 +34,12 @@ class Pile extends Component {
     }
   }
 
-  handPileClassName = () => {
-    if(this.state.selected === false){
-      return "pile"
-    }else if(this.state.selected === true){
+  pileClassName = () => {
+    if(this.props.selectedPile.id === this.props.pile.id){
       return "SelectedPile"
-    }
+    }else{
+      return "pile"
+    } 
   }
 
 
@@ -56,7 +56,7 @@ class Pile extends Component {
 
   render(){
     return(
-      <div className={`${this.handPileClassName()}`} onClick={this.handleOnClick}>
+      <div className={`${this.pileClassName()}`} onClick={this.handleOnClick}>
         <p>Count {this.type()}</p>
         <PileCard value ={this.anchor()}/>
         <PileCard value={this.topCardValue()}/> 

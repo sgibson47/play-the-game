@@ -14,6 +14,7 @@ class Game extends Component {
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
         <Piles 
           piles={this.props.currentGame.piles}
+          selectedPile={this.props.selectedPile}
           selectPile={this.props.selectPile}
           deselectPile={this.props.deselectPile}
         />

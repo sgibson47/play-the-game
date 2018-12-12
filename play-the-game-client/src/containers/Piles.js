@@ -10,6 +10,7 @@ class Piles extends Component {
           <Pile 
             key={pile.id} 
             pile={pile}
+            selectedPile={this.props.selectedPile}
             selectPile={this.props.selectPile}
             deselectPile={this.props.deselectPile}
           />
