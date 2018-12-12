@@ -2,12 +2,6 @@ import React, {Component} from 'react';
 import PileCard from '../components/PileCard'
 
 class Pile extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      selected: false
-    }
-  }
 
   topCardValue = () => {
     const topMostCard = this.props.pile.topMostCard
@@ -44,11 +38,9 @@ class Pile extends Component {
 
 
   handleOnClick = (event) =>{
-    if(this.state.selected){
-      this.setState({selected: false})
+    if(this.props.selectedPile.id === this.props.pile.id){
       this.props.deselectPile()
     }else{
-      this.setState({selected: true})
       this.props.selectPile(this.props.pile)
     }
   }

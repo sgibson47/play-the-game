@@ -1,12 +1,6 @@
 import React, {Component} from 'react'
 
 class HandCard extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      selected: false,
-    }
-  }
 
   handCardClassName = () => {
     if(this.props.played === "true"){
@@ -20,11 +14,9 @@ class HandCard extends Component {
 
 
   handleOnClick = (event) =>{
-    if(this.state.selected){
-      this.setState({selected: false})
+    if(this.props.selectedCard.id === this.props.card.id){
       this.props.deselectCard()
     }else{
-      this.setState({selected: true})
       this.props.selectCard(this.props.card)
     }
     
