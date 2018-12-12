@@ -11,7 +11,11 @@ class MakeMove extends Component {
 
   render(){
     return (
-      <div className={this.props.moveable} >
+      <div 
+        className="MakeMove"
+        // {this.props.makeMoveClassName} 
+        >
+        Nice, that's a valid move.<br/> 
         <button onClick={this.handleOnClick}>Play card</button>
       </div>
     )

@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import Deck from '../components/Deck'
 import Hand from './Hand'
 import Piles from './Piles'
+import MakeMove from '../components/MakeMove'
 
 class Game extends Component {
+
   render(){
     return(
       <div className="game">
@@ -13,6 +15,7 @@ class Game extends Component {
           selectPile={this.props.selectPile}
           deselectPile={this.props.deselectPile}
         />
+        <MakeMove />
         <Hand 
           cards={this.props.currentGame.hand.cards} 
           selectedCard={this.props.selectedCard}
