@@ -31,6 +31,7 @@ class App extends Component {
           
           addMove={this.props.addMove}
           updateTopCard={this.props.updateTopCard}
+          moves={this.props.movesData.moves}
         />
       </div>
     )
@@ -42,7 +43,7 @@ const mapStateToProps = (state) =>{
     currentGame: state.game,
     selectedCard: state.selectedCard,
     selectedPile: state.selectedPile,
-    moves: state.moves
+    movesData: state.movesData
   })
 }
 

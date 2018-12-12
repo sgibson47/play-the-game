@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import HandCard from '../components/HandCard'
 
-class Hand extends Component {
-
+class Hand extends Component {  
   createHandCards = () => {
     return this.props.cards.map(card =>
+
           <HandCard 
             card={card} 
             key={card.id} 
-            played="false" 
+            played={this.props.playedCardIds.includes(card.id) ? "true" : "false"}
             selectCard={this.props.selectCard}
             deselectCard={this.props.deselectCard}
             selectedCard={this.props.selectedCard}

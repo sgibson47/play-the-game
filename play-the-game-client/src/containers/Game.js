@@ -47,9 +47,17 @@ class Game extends Component {
     }
   }
 
+  playedCardIds = () =>{
+    if(this.props.moves.length === 0){
+      return [0]
+    }else{
+      return this.props.moves.map(move =>move.card_id)
+    }
+  }
+
   render(){
-    // console.log("From Game")
-    // debugger
+    console.log("From Game")
+    debugger
     return(
       <div className="game">
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
@@ -70,7 +78,8 @@ class Game extends Component {
         />
         <BadMove render={this.invalidMoveSelected()}/>
         <Hand 
-          cards={this.props.currentGame.hand.cards} 
+          cards={this.props.currentGame.hand.cards}
+          playedCardIds={this.playedCardIds()} 
           selectedCard={this.props.selectedCard}
           selectCard={this.props.selectCard}
           deselectCard={this.props.deselectCard}
