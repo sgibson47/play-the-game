@@ -2,7 +2,7 @@ const initialState = {
             id: 0,
             asc: true,
             game_id: 0,
-            cards: []
+            topMostCard: null
           }
 
 export default (state = initialState, action) => {

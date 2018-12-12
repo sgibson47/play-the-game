@@ -13,13 +13,20 @@ class MakeMove extends Component {
     this.props.deselectPile()
   }
 
+  makeMoveClassName = () => {
+    if(this.props.render){
+      return "MakeMove"
+    }else {
+      return "HideMakeMove"
+    }
+  }
+
   render(){
     // console.log("From MakeMove")
     // debugger
     return (
       <div 
-        className="MakeMove"
-        // {this.props.makeMoveClassName} 
+        className={this.makeMoveClassName()} 
         >
         Nice, that's a valid move.<br/> 
         <button onClick={this.makeMove}>Play card</button>

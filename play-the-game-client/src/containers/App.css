@@ -88,4 +88,15 @@
   padding: 2%;
 }
 
+.HideMakeMove{
+  display: none;
+}
+
+.BadMove{
+  padding: 2%;
+}
+
+.HideBadMove{
+  display: none;
+}
 
