@@ -72,57 +72,6 @@ Game Play in detail:
 
   maybe move Draw up to 7 to start of a turn? 
 
-How am I gonna model this stuff?
-  - Game
-    id
-    status: boolean
-    playerName  
-      -- for the leader board?
-        Ask for at outset of game? 
-        or 
-        Ask for when game is completed?    
-      -- maybe later 
-        set up a player/user model
-        set up log in
-        make games 
-          public (other users can play on your saved game) 
-          or 
-          private (only the creator may view & play)
-
-  has_many :piles
-  has_one :deck
-  has_one :hand
-  
-  - Card
-    id
-    value
-    whereIsCard_id
-    whereIsCard_type
-
-  belongs_to :whereIsCard, polymorphic: true
-
-  - Pile
-    id
-    type: [ASC, DESC]
-    gameId
-  
-  belongs_to :game
-  has_many :cards, as: :whereIsCard
-
-  - Deck
-    id
-    gameId
-  
-  belongs_to :game
-  has_many :cards, as: :whereIsCard
-
-  - Hand
-    id
-    gameId
-  
-  belongs_to :game
-  has_many :cards, as: :whereIsCard
-
 Initialize a game with a Deck containing 98 cards numbered 2-99, an empty hand, 2 empty ASC (1) piles, and 2 empty DESC (100) piles.
 
 Move cards from the game's deck to hand to pile as the game is played.
@@ -181,57 +130,6 @@ App
     check how many cards have been played this turn
     once two cards have been played, render button to end turn
 
-
-Store?
-  {
-    game: {
-      {
-        id: 1,
-        status: null,
-        playerName: null,
-        piles: [
-          {
-          id: 1,
-          asc: null,
-          game_id: 1,
-          cards: [
-            {
-              id: 2,
-              value: 43,
-              whereIsCard_type: "Pile",
-              whereIsCard_id: 1,
-              created_at: "2018-12-07T22:34:28.507Z",
-              updated_at: "2018-12-07T22:34:43.423Z"
-            }
-          ]
-          }
-        ],
-        deck: {
-          id: 1,
-          game_id: 1,
-          cards: [
-            {
-            id: 1,
-            value: null,
-            whereIsCard_type: "Deck",
-            whereIsCard_id: 1,
-            created_at: "2018-12-07T22:15:03.092Z",
-            updated_at: "2018-12-07T22:15:03.092Z"
-            }
-          ]
-        },
-        hand: {
-          id: 1,
-          game_id: 1,
-          cards: {
-            type: "active_record/associations/collection_proxy",
-            active_record/associations/collection_proxy: [ ]
-          }
-        }
-      }
-    },
-    card:
-  }
 
 Let's get a valid move working. 
 
@@ -321,7 +219,6 @@ We need to
  let's start today with rewrorking the data provided by our api to better fit our needs on the client side
     - just the number of cards in the deck
     - just the top most card of a pile (or even just its value)
-
 
 
 
