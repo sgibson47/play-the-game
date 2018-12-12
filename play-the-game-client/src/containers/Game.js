@@ -56,8 +56,8 @@ class Game extends Component {
   }
 
   render(){
-    console.log("From Game")
-    debugger
+    // console.log("From Game")
+    // debugger
     return(
       <div className="game">
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
