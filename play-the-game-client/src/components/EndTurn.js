@@ -3,7 +3,9 @@ import React, {Component} from 'react'
 class EndTurn extends Component {
 
   endTurn = () =>{
-    
+    this.props.updateGame()
+
+    // clear moves
   }
 
   EndTurnClassName = () => {
