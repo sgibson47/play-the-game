@@ -4,6 +4,7 @@ import Hand from './Hand'
 import Piles from './Piles'
 import MakeMove from '../components/MakeMove'
 import BadMove from '../components/BadMove'
+import EndTurn from '../components/EndTurn'
 
 class Game extends Component {
 
@@ -77,6 +78,7 @@ class Game extends Component {
           render={this.validMoveSelected()}
         />
         <BadMove render={this.invalidMoveSelected()}/>
+        <EndTurn />
         <Hand 
           cards={this.props.currentGame.hand.cards}
           playedCardIds={this.playedCardIds()} 
