@@ -41,6 +41,13 @@ export const addMove = move => {
   }
 }
 
+export const updateTopCard = data => {
+  return{
+    type: 'UPDATE_TOP_CARD',
+    data
+  }
+}
+
 //** Async Actions **
 export const getGame = () =>{
   return dispatch => {
