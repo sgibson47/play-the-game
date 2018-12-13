@@ -68,8 +68,8 @@ export const updateGame = moves =>{
       }
     })
       .then(response => response.json())
-      .then(response => console.log('Success:', JSON.stringify(response)))
-      // .then(game => dispatch(setGame(game)))
+      // .then(response => console.log('Success:', JSON.stringify(response)))
+      .then(game => dispatch(setGame(game)))
       .catch(error => console.log(error))
   }
 }
