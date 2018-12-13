@@ -41,6 +41,12 @@ export const addMove = move => {
   }
 }
 
+export const clearMoves = () => {
+  return{
+    type: 'CLEAR_MOVES'
+  }
+}
+
 export const updateTopCard = data => {
   return{
     type: 'UPDATE_TOP_CARD',
