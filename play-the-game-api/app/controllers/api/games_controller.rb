@@ -38,11 +38,25 @@ class Api::GamesController < ApplicationController
   def update
     moves = game_params[:newMoves]
 
-    firstMove = moves.first
+    # make this turn's moves
+    moves.each do |move| 
+      card = Card.find_by(id: move[:card_id])
+      pile = Pile.find_by(id: move[:pile_id])
+      card.whereIsCard = pile
+      card.save
+    end 
 
-    firstMovesPileId = firstMove[:pile_id]
+    # deal up to seven cards from deck to hand
+    if @game.hand.cards.length < 7
+      (7 - @game.hand.cards.length).times do  
+        card = @game.deck.cards.slice(-1)
+        card.whereIsCard = @game.hand
+        card.save
+      end
+    end
 
-    render json: firstMovesPileId 
+
+    render json: @game, include: '**'
     # {"newMoves":[{"card_id":104,"pile_id":8},{"card_id":105,"pile_id":8}]}
     # need to 
     # iterate through moves, changing each card's location
@@ -55,6 +69,8 @@ class Api::GamesController < ApplicationController
     # else
     #   render json:{message: @game.errors}, status: 400
     # end
+
+    
   end
 
   def destroy
