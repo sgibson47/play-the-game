@@ -36,8 +36,14 @@ class Api::GamesController < ApplicationController
   end
 
   def update
-    raise params.inspect
+    moves = game_params[:newMoves]
 
+    firstMove = moves.first
+
+    firstMovesPileId = firstMove[:pile_id]
+
+    render json: firstMovesPileId 
+    # {"newMoves":[{"card_id":104,"pile_id":8},{"card_id":105,"pile_id":8}]}
     # need to 
     # iterate through moves, changing each card's location
     # save changes
@@ -66,12 +72,8 @@ class Api::GamesController < ApplicationController
     params.require(:game).permit(
       :status, 
       :playerName, 
-      newMoves:[
-        {
-          card_id:,
-          pile_id:
-        }
-      ])
+      {newMoves:[:card_id, :pile_id]}
+      )
   end
 
   def set_game
