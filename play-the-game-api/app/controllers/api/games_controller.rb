@@ -36,11 +36,12 @@ class Api::GamesController < ApplicationController
   end
 
   def update
-    if @game.update(game_params)
-      render json: @game, include: '**'
-    else
-      render json:{message: @game.errors}, status: 400
-    end
+    raise params.inspect
+    # if @game.update(game_params)
+    #   render json: @game, include: '**'
+    # else
+    #   render json:{message: @game.errors}, status: 400
+    # end
   end
 
   def destroy
