@@ -12,7 +12,7 @@ class Api::GamesController < ApplicationController
   def create
     game = Game.new(game_params)
     if game.save
-      render json: game, include: '**'
+      render json: game
     else
       render json:{message: game.errors}, status: 400
     end
@@ -100,6 +100,7 @@ class Api::GamesController < ApplicationController
         card.whereIsCard = @game.hand
         card.save
       end
+      @game.hand.save
     end
   end
 

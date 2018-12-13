@@ -17,8 +17,8 @@ class EndTurn extends Component {
   }
 
   render(){
-    console.log("From EndTurn")
-    debugger
+    // console.log("From EndTurn")
+    // debugger
     return (
       <div 
         className={this.EndTurnClassName()} 
