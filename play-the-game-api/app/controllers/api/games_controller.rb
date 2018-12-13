@@ -37,6 +37,13 @@ class Api::GamesController < ApplicationController
 
   def update
     raise params.inspect
+
+    # need to 
+    # iterate through moves, changing each card's location
+    # save changes
+    # the updated game
+
+
     # if @game.update(game_params)
     #   render json: @game, include: '**'
     # else
@@ -56,27 +63,15 @@ class Api::GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:status, :playerName, 
-      piles_attributes:[
-        :id,
-        :asc,
-        :game_id,
-        cards_attributes: [
-          :id,
-          :value,
-          :whereIsCard_type,
-          :whereIsCard_id
-        ]
-      ],
-      deck_attribues:[
-        :id,
-        :game_id
-      ],
-      hand_attribues:[
-        :id,
-        :game_id
-      ]
-    )
+    params.require(:game).permit(
+      :status, 
+      :playerName, 
+      newMoves:[
+        {
+          card_id:,
+          pile_id:
+        }
+      ])
   end
 
   def set_game

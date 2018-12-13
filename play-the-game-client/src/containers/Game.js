@@ -89,6 +89,7 @@ class Game extends Component {
         <EndTurn 
           render={this.playedAtLeastTwo()} 
           updateGame={this.props.updateGame}
+          moves={this.props.moves}
         />
         <Hand 
           cards={this.props.currentGame.hand.cards}

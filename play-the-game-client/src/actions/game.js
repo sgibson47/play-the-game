@@ -61,14 +61,15 @@ export const getGame = () =>{
 export const updateGame = moves =>{
   return dispatch => {
     return fetch(`${API_URL}/games/1`, {
-      method: "PUT",
-      headers: {
+      method: 'PUT',
+      body: JSON.stringify({game:{ newMoves: moves }}),
+      headers:{
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ game: moves })
+      }
     })
       .then(response => response.json())
-      .then(game => dispatch(setGame(game)))
+      .then(response => console.log('Success:', JSON.stringify(response)))
+      // .then(game => dispatch(setGame(game)))
       .catch(error => console.log(error))
   }
 }
