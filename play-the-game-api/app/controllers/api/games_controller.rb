@@ -47,16 +47,10 @@ class Api::GamesController < ApplicationController
     end 
 
     # deal up to seven cards from deck to hand
-    if @game.hand.cards.length < 7
-      (7 - @game.hand.cards.length).times do  
-        card = @game.deck.cards.slice(-1)
-        card.whereIsCard = @game.hand
-        card.save
-      end
-    end
+    dealUpToSeven
 
-
-    render json: @game, include: '**'
+# 
+    # render json: @game, include: '**'
     # {"newMoves":[{"card_id":104,"pile_id":8},{"card_id":105,"pile_id":8}]}
     # need to 
     # iterate through moves, changing each card's location
@@ -64,11 +58,11 @@ class Api::GamesController < ApplicationController
     # the updated game
 
 
-    # if @game.update(game_params)
-    #   render json: @game, include: '**'
-    # else
-    #   render json:{message: @game.errors}, status: 400
-    # end
+    if @game.save
+      render json: @game, include: '**'
+    else
+      render json:{message: @game.errors}, status: 400
+    end
 
     
   end
@@ -94,6 +88,19 @@ class Api::GamesController < ApplicationController
 
   def set_game
     @game = Game.find_by(id: params[:id])
+  end
+
+  def dealUpToSeven
+    numOfCardsInHand = @game.hand.cards.length
+    if (numOfCardsInHand < 7)
+      numToDeal = (7-numOfCardsInHand)
+      numOfCardsInDeck = @game.deck.cards.length
+      cardsToDeal = @game.deck.cards.slice(-numToDeal, (numOfCardsInDeck-1))
+      cardsToDeal.each do |card|
+        card.whereIsCard = @game.hand
+        card.save
+      end
+    end
   end
 
 end
