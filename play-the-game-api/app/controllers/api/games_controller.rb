@@ -7,7 +7,15 @@
   # But, if I refresh the page and fetch the same game 
   # from the games#show action I get the data starting on 18.
   # The game has 7 cards in its hand. 
-  # The game's deck' cardCount has decreased. 
+  # The game's deck' cardCount has decreased.
+  # but the game's piles' topMostCard has updated
+  # and that card show's updated whereIsCard_type and whereIsCard_id attrs
+
+  # why are only some of the changes performed in games#update 
+  # getting rendered, but all of them are getting made and
+  # rendered when a subsequent GET request is sent to games#show?
+
+
 class Api::GamesController < ApplicationController
   before_action :set_game, only: [:show, :update, :destroy]
 
@@ -181,11 +189,19 @@ class Api::GamesController < ApplicationController
 
     # let's try explicitly saving each of the game's pieces
     # that aren't coming through right
-    @game.hand.save
+    # @game.hand.save
 
+    # maybe if we tell the controller to go get the whole game again 
+    # whole game again before rendering it'll grab updated
+    # infor from the database
+    game = Game.find_by(id: @game.id)
+    render json: game, include: '**'
+    # woooooooooooo
+    # deck's cardCount went down and
+    # hand has 7 cards!
 
-    if @game.save
-      render json: @game, include: '**'
+    # if @game.save
+    #   render json: @game, include: '**'
       # this is rendering:
       # {
       #   "id":1,
@@ -304,9 +320,9 @@ class Api::GamesController < ApplicationController
       #         ]
       #       }
       #     }
-    else
-      render json:{message: @game.errors}, status: 400
-    end
+    # else
+    #   render json:{message: @game.errors}, status: 400
+    # end
 
     
   end
