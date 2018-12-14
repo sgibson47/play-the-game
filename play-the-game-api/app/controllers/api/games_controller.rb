@@ -50,6 +50,19 @@ class Api::GamesController < ApplicationController
     # let's figure out if the piles table of the db
     # isn't getting changed with each move, or if
     # the inf isn't getting out properly
+
+    # ok the extra cards played are there
+    # so let's look at what we're retrieving
+    # and storing in topMostCard when we serialize a pile
+    # pile.cards.last
+    # SELECT  "cards".* FROM "cards" WHERE "cards"."whereIsCard_id" = $1 AND "cards"."whereIsCard_type" = $2 ORDER BY "cards"."id" DESC LIMIT $3  [["whereIsCard_id", 5], ["whereIsCard_type", "Pile"], ["LIMIT", 1]]
+    # <Card id: 198, value: 9, whereIsCard_type: "Pile", whereIsCard_id: 5, created_at: "2018-12-10 18:14:20", updated_at: "2018-12-13 21:59:20"
+    # mmk, I'm grabbing the first card 
+    # whose whereIsCard_type and _id match the pile 
+    # from all the cards in descending order by id
+    # not the card most recently assigned to that pile
+
+    # Instead, retrieve the card based on most recent updated_at attr?
   end
 
   def destroy
