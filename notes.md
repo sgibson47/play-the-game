@@ -246,7 +246,9 @@ What's left
       - ask for playerName here?
   7. Header & footer with nav links
   8. ability to delete a game?
-  
+
+  is it 12 commits that make the git hub tracker go slightly darker?
+
 
 
 
