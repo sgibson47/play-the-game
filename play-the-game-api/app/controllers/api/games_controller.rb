@@ -38,11 +38,18 @@ class Api::GamesController < ApplicationController
   def update
     makeMoves(game_params[:newMoves])
 
-    dealUpToSeven
+    dealUpToSeven(@game)
 
     game = Game.find_by(id: @game.id)
 
-    render json: game, include: '**'   
+    render json: game, include: '**' 
+
+    # hahahaha 
+    # the pile's topMostCard isn't updating
+    # to the rails console!
+    # let's figure out if the piles table of the db
+    # isn't getting changed with each move, or if
+    # the inf isn't getting out properly
   end
 
   def destroy
@@ -68,14 +75,14 @@ class Api::GamesController < ApplicationController
     @game = Game.find_by(id: params[:id])
   end
 
-  def dealUpToSeven
-    numOfCardsInHand = @game.hand.cards.length
+  def dealUpToSeven(game)
+    numOfCardsInHand = game.hand.cards.length
     if (numOfCardsInHand < 7)
       numToDeal = (7-numOfCardsInHand)
-      numOfCardsInDeck = @game.deck.cards.length
-      cardsToDeal = @game.deck.cards.slice(-numToDeal, (numOfCardsInDeck-1))
+      numOfCardsInDeck = game.deck.cards.length
+      cardsToDeal = game.deck.cards.slice(-numToDeal, (numOfCardsInDeck-1))
       cardsToDeal.each do |card|
-        card.whereIsCard = @game.hand
+        card.whereIsCard = game.hand
         card.save
       end
     end
@@ -87,6 +94,7 @@ class Api::GamesController < ApplicationController
       pile = Pile.find_by(id: move[:pile_id])
       card.whereIsCard = pile
       card.save
+      pile.save
     end
   end
 
