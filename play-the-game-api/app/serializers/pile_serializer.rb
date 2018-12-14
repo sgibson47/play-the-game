@@ -4,6 +4,6 @@ class PileSerializer < ActiveModel::Serializer
   # has_many :cards, polymorphic: true
 
   def topMostCard
-    object.cards.last
+    object.cards.mostRecetlyUpdated.one
   end
 end
