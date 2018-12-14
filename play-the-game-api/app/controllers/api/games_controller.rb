@@ -171,18 +171,13 @@ class Api::GamesController < ApplicationController
   end
 
   def update
-    moves = game_params[:newMoves]
-
     # make this turn's moves
-    moves.each do |move| 
-      card = Card.find_by(id: move[:card_id])
-      pile = Pile.find_by(id: move[:pile_id])
-      card.whereIsCard = pile
-      card.save
-    end 
+    makeMoves(game_params[:newMoves])
 
     # deal up to seven cards from deck to hand
     dealUpToSeven
+
+
 
 # 
     # render json: @game, include: '**'
@@ -353,7 +348,16 @@ class Api::GamesController < ApplicationController
         card.whereIsCard = @game.hand
         card.save
       end
-      @game.hand.save
+      # @game.hand.save
+    end
+  end
+
+  def makeMoves(moves)
+    moves.each do |move| 
+      card = Card.find_by(id: move[:card_id])
+      pile = Pile.find_by(id: move[:pile_id])
+      card.whereIsCard = pile
+      card.save
     end
   end
 
