@@ -3,9 +3,11 @@
   # with info about the moves to persist to games#update
   # the controller action renders the data starting on 199
   # The game only has 5 cards in its hand. 
+  # The game's deck' cardCount hasn't decreased.
   # But, if I refresh the page and fetch the same game 
   # from the games#show action I get the data starting on 18.
   # The game has 7 cards in its hand. 
+  # The game's deck' cardCount has decreased. 
 class Api::GamesController < ApplicationController
   before_action :set_game, only: [:show, :update, :destroy]
 
@@ -177,15 +179,9 @@ class Api::GamesController < ApplicationController
     # deal up to seven cards from deck to hand
     dealUpToSeven
 
-
-
-# 
-    # render json: @game, include: '**'
-    # {"newMoves":[{"card_id":104,"pile_id":8},{"card_id":105,"pile_id":8}]}
-    # need to 
-    # iterate through moves, changing each card's location
-    # save changes
-    # the updated game
+    # let's try explicitly saving each of the game's pieces
+    # that aren't coming through right
+    @game.hand.save
 
 
     if @game.save
