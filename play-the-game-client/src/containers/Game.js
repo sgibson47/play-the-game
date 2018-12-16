@@ -131,6 +131,12 @@ class Game extends Component {
     // or change games#update to do different things depending on the params it recieves
   }
 
+  componentDidMount(){
+    if(this.gameOver){
+      this.props.endGame()
+    }
+  }
+
   render(){
     // console.log("From Game")
     // debugger
