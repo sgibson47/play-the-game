@@ -13,8 +13,7 @@ class MakeMove extends Component {
       card: this.props.selectedCard
     };
 
-    this.props.addMove(move)
-    this.props.updateTopCard(data)
+    this.props.makeMove(move)
     this.props.deselectCard()
     this.props.deselectPile()
   }
