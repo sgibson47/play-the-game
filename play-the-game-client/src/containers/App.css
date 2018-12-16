@@ -108,3 +108,11 @@
   display: none;
 }
 
+.GameOver{
+  padding: 2%;
+}
+
+.HideGameOver{
+  display: none;
+}
+
