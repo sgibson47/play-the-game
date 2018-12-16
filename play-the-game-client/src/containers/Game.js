@@ -156,7 +156,7 @@ class Game extends Component {
           deselectPile={this.props.deselectPile}
         />
         <MakeMove
-          addMove={this.props.addMove}
+          makeMove={this.props.makeMove}
           updateTopCard={this.props.updateTopCard}
           selectedCard={this.props.selectedCard}
           selectedPile={this.props.selectedPile}
