@@ -81,3 +81,19 @@ export const makeMoves = moves =>{
   }
 }
 
+export const endGame = overOrNot =>{
+  return dispatch => {
+    return fetch(`${API_URL}/games/1`, {
+      method: 'PUT',
+      body: JSON.stringify({game:{ overOrNot: overOrNot }}),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(response => console.log('Success:', JSON.stringify(response)))
+      // .then(game => dispatch(setGame(game)))
+      // .catch(error => console.log(error))
+  }
+}
+
