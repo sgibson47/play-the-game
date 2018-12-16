@@ -81,11 +81,11 @@ export const makeMoves = moves =>{
   }
 }
 
-export const endGame = overOrNot =>{
+export const endGame = () =>{
   return dispatch => {
     return fetch(`${API_URL}/games/1`, {
       method: 'PUT',
-      body: JSON.stringify({game:{ overOrNot: overOrNot }}),
+      body: JSON.stringify({game:{ over: true }}),
       headers:{
         'Content-Type': 'application/json'
       }

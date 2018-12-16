@@ -39,7 +39,7 @@ class Api::GamesController < ApplicationController
     if game_params[:newMoves]
       makeMoves(game_params[:newMoves])
       dealUpToSeven(@game)
-    elsif game_params[:overOrNot]
+    elsif game_params[:over]
       @game.status = false
     end
 
@@ -64,7 +64,7 @@ class Api::GamesController < ApplicationController
       :status, 
       :playerName, 
       {newMoves:[:card_id, :pile_id]},
-      :overOrNot
+      :over
       )
   end
 

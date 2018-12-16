@@ -249,6 +249,25 @@ What's left
 
   is it 12 commits that make the git hub tracker go slightly darker?
 
+  -----
+
+  when tryign to end a game to test if my async update to change the games status would work I realized a problem
+
+  the problem: the game can end in the middle of a turn!
+   I can't get to the end turn button b/c I've only played a single card
+   BUT there aren't any more valid moves
+
+  SO
+  games#update needs to respond to :newMove and :endTurn; maybe change :over to :endGame for consistency
+
+  clicking the "Play card" button should trigger a request to games#update that persists the move with move info in :newMove and increase a moves counter
+
+  when the moves counter is 2 or greater the "End Turn" button should be rendered
+
+  clicking "End Turn" should trigger a request to games#update that deals up to 7 cards and should reset the moves counter
+
+
+
 
 
 
