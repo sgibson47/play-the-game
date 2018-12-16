@@ -157,7 +157,6 @@ class Game extends Component {
         />
         <MakeMove
           makeMove={this.props.makeMove}
-          updateTopCard={this.props.updateTopCard}
           selectedCard={this.props.selectedCard}
           selectedPile={this.props.selectedPile}
           deselectCard={this.props.deselectCard}
@@ -167,8 +166,6 @@ class Game extends Component {
         <BadMove render={this.invalidMoveSelected()}/>
         <EndTurn 
           render={this.playedAtLeastTwo()} 
-          makeMoves={this.props.makeMoves}
-          moves={this.props.moves}
         />
         <Hand 
           cards={this.props.currentGame.hand.cards}
