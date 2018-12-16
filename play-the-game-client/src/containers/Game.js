@@ -64,6 +64,48 @@ class Game extends Component {
     }
   }
 
+  gameOver = () =>{
+    // iterate through cards in hand
+    // check if each can be played on any of the four piles
+    // return true if game is over return false if not 
+    const handCards = this.props.game.hand.cards
+    const topMostCardsAsc = this.props.games.piles.forEach(function (pile, index, piles){
+      if(pile.asc === true){
+        return pile.topMostCard
+      } 
+    })
+
+    const topMostCardsDesc = this.props.games.piles.forEach(function (pile, index, piles){
+      if(pile.asc !== true){
+        return pile.topMostCard
+      }
+    })  
+
+    const playableOnAsc = handCards.forEach(function (card, index, handCards) {
+      if(card < topMostCardsAsc[0] && card < topMostCardsAsc[1]){
+        return false
+      }
+    });
+
+    const playableOnDesc = handCards.forEach(function (card, index, handCards) {
+      if(card > topMostCardsDesc[0] && card > topMostCardsDesc[1]){
+        return false
+      }
+    });
+
+    if(game.deck.cards === 0 || (!playableOnDesc && !playableOnAsc)){
+      return true
+    }else{
+      return false
+    }
+
+        // maybe add a presentational component saying GAME OVER
+    // & conditionally render it based on game's status? the result of this function?
+    // if the game is over maybe this function should trigger an update to the database?
+    // we're gonna need to either set up a new controller for that
+    // or change games#update to do different things depending on the params it recieves
+  }
+
   render(){
     // console.log("From Game")
     // debugger
