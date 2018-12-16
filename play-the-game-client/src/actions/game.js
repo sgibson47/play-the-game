@@ -64,11 +64,11 @@ export const getGame = () =>{
   }
 }
 
-export const makeMoves = moves =>{
+export const makeMove = move =>{
   return dispatch => {
     return fetch(`${API_URL}/games/1`, {
       method: 'PUT',
-      body: JSON.stringify({game:{ newMoves: moves }}),
+      body: JSON.stringify({game:{ newMove: move }}),
       headers:{
         'Content-Type': 'application/json'
       }
@@ -76,7 +76,7 @@ export const makeMoves = moves =>{
       .then(response => response.json())
       // .then(response => console.log('Success:', JSON.stringify(response)))
       .then(game => dispatch(setGame(game)))
-      .then(dispatch(clearMoves()))
+      // .then(dispatch(clearMoves()))
       .catch(error => console.log(error))
   }
 }
