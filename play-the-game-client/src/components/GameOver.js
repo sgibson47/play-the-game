@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class GameOver extends Component {
 
   GameOverClassName = () => {
-    if(this.props.render){
+    if(!this.props.render){
       return "GameOver"
     }else {
       return "HideGameOver"

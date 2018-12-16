@@ -132,11 +132,16 @@ class Game extends Component {
   }
 
   render(){
-    // console.log("From Game")
-    // debugger
+    console.log("From Game")
+    debugger
     return(
       <div className="game">
-        <GameOver render={this.gameOver()}/>
+        <GameOver 
+          render={this.props.currentGame.status}
+          // this ought to depend on this.props.currentGame.status
+          // Game.find_by(id: 1) has status true
+          // soo for now true === incomplete game
+        />
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
         <Piles 
           piles={this.props.currentGame.piles}
