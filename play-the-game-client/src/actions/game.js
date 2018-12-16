@@ -34,10 +34,9 @@ export const deselectPile = () => {
   }
 }
 
-export const addMove = move => {
+export const addMove = () => {
   return{
-    type: 'ADD_MOVE',
-    move
+    type: 'ADD_MOVE'
   }
 }
 
