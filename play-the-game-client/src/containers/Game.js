@@ -63,48 +63,65 @@ class Game extends Component {
       return true
     }
   }
-
-  gameOver = () =>{
-    // iterate through cards in hand
-    // check if each can be played on any of the four piles
-    // return true if game is over return false if not 
-    const handCards = this.props.game.hand.cards
-    const topMostCardsAsc = this.props.games.piles.forEach(function (pile, index, piles){
+  
+  topMostCardsAsc = () =>{
+    let cards = []
+    this.props.currentGame.piles.forEach(function (pile, index, piles){
       if(pile.asc === true){
-        return pile.topMostCard
+        cards.push(pile.topMostCard)
       } 
     })
+    return cards
+  }
 
-    const topMostCardsDesc = this.props.games.piles.forEach(function (pile, index, piles){
+  topMostCardsDesc = () =>{
+    let cards = []
+    this.props.currentGame.piles.forEach(function (pile, index, piles){
       if(pile.asc !== true){
-        return pile.topMostCard
-      }
-    })  
+        cards.push(pile.topMostCard)
+      } 
+    }) 
+    return cards
+  } 
 
-    const playableOnAsc = handCards.forEach(function (card, index, handCards) {
-      if(card < topMostCardsAsc[0] && card < topMostCardsAsc[1]){
-        return false
-      }else{
-        return true
+  playableOnAsc = ()=>{
+    let topCards = this.topMostCardsAsc()
+    let array = []
+    this.props.currentGame.hand.cards.forEach(
+      function (card, index, handCards) {
+        if(card.value < topCards[0] && card.value < topCards[1]){
+          array.push(false)
+        }else{
+          array.push(true)
+        }
       }
-    });
-
-    const playableOnDesc = handCards.forEach(function (card, index, handCards) {
-      if(card > topMostCardsDesc[0] && card > topMostCardsDesc[1]){
-        return false
-      }else{
-        return true
+    )
+    return array
+  }
+  
+  playableOnDesc = () => {
+    let otherTopCards = this.topMostCardsDesc()
+    let array = []
+    this.props.currentGame.hand.cards.forEach(
+      function (card, index, handCards) {
+        if(card.value > otherTopCards[0] && card.value > otherTopCards[1]){
+          array.push(false)
+        }else{
+          array.push(true)
+        }
       }
-    });
-    // gives me an array of true or false
+    )
+    return array
+  }
 
-    if(game.deck.cards === 0 || (!playableOnDesc.includes(true) && !playableOnAsc.includes(true))){
+  gameOver = () =>{
+    if(this.props.currentGame.deck.cards === 0 || (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true))){
       return true
     }else{
       return false
     }
 
-        // maybe add a presentational component saying GAME OVER
+    // maybe add a presentational component saying GAME OVER
     // & conditionally render it based on game's status? the result of this function?
     // if the game is over maybe this function should trigger an update to the database?
     // we're gonna need to either set up a new controller for that
@@ -112,8 +129,8 @@ class Game extends Component {
   }
 
   render(){
-    // console.log("From Game")
-    // debugger
+    console.log("From Game")
+    debugger
     return(
       <div className="game">
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
