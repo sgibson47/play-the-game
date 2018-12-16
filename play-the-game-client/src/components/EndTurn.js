@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class EndTurn extends Component {
 
   endTurn = () =>{
-    this.props.updateGame(this.props.moves)
+    this.props.makeMoves(this.props.moves)
 
     // clear moves
   }

@@ -132,8 +132,8 @@ class Game extends Component {
   }
 
   render(){
-    console.log("From Game")
-    debugger
+    // console.log("From Game")
+    // debugger
     return(
       <div className="game">
         <GameOver 
@@ -161,7 +161,7 @@ class Game extends Component {
         <BadMove render={this.invalidMoveSelected()}/>
         <EndTurn 
           render={this.playedAtLeastTwo()} 
-          updateGame={this.props.updateGame}
+          makeMoves={this.props.makeMoves}
           moves={this.props.moves}
         />
         <Hand 

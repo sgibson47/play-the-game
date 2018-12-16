@@ -64,7 +64,7 @@ export const getGame = () =>{
   }
 }
 
-export const updateGame = moves =>{
+export const makeMoves = moves =>{
   return dispatch => {
     return fetch(`${API_URL}/games/1`, {
       method: 'PUT',
