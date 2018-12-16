@@ -84,16 +84,21 @@ class Game extends Component {
     const playableOnAsc = handCards.forEach(function (card, index, handCards) {
       if(card < topMostCardsAsc[0] && card < topMostCardsAsc[1]){
         return false
+      }else{
+        return true
       }
     });
 
     const playableOnDesc = handCards.forEach(function (card, index, handCards) {
       if(card > topMostCardsDesc[0] && card > topMostCardsDesc[1]){
         return false
+      }else{
+        return true
       }
     });
+    // gives me an array of true or false
 
-    if(game.deck.cards === 0 || (!playableOnDesc && !playableOnAsc)){
+    if(game.deck.cards === 0 || (!playableOnDesc.includes(true) && !playableOnAsc.includes(true))){
       return true
     }else{
       return false
