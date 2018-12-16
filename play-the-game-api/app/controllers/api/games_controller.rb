@@ -36,9 +36,12 @@ class Api::GamesController < ApplicationController
   end
 
   def update
-    makeMoves(game_params[:newMoves])
-
-    dealUpToSeven(@game)
+    if game_params[:newMoves]
+      makeMoves(game_params[:newMoves])
+      dealUpToSeven(@game)
+    elsif game_params[:overOrNot]
+      @game.status = false
+    end
 
     game = Game.find_by(id: @game.id)
 
@@ -60,7 +63,8 @@ class Api::GamesController < ApplicationController
     params.require(:game).permit(
       :status, 
       :playerName, 
-      {newMoves:[:card_id, :pile_id]}
+      {newMoves:[:card_id, :pile_id]},
+      :overOrNot
       )
   end
 
