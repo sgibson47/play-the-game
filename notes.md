@@ -264,7 +264,7 @@ What's left
 
   when the moves counter is 2 or greater the "End Turn" button should be rendered
 
-  clicking "End Turn" should trigger a request to games#update that deals up to 7 cards and should reset the moves counter
+  clicking "End Turn" should trigger a request to games#upte that deals up to 7 cards and should reset the moves counter
 
 
 
