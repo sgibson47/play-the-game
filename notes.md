@@ -227,10 +227,10 @@ What we can do now,
   At the end of each turn I deal enough cards to ge the player back up to seven cards in their hand. 
 
 What's left 
-  1. checking to see if game is over -- i.e. deck runs out or no more possible moves
+  X1. checking to see if game is over -- i.e. deck runs out or no more possible moves
   2. behavior when game ends
       - update game's status attr to false
-      - is this when we'll ask for the player's name to display on a leader board
+      - ¿is this when we'll ask for the player's name to display on a leader board?
       - some indication on the game's show page that the game cannot be played further
   3. routing
       - get to game's show page via client side routing

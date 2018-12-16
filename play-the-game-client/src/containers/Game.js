@@ -115,7 +115,9 @@ class Game extends Component {
   }
 
   gameOver = () =>{
-    if(this.props.currentGame.deck.cards === 0 || (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true))){
+    if(this.props.currentGame.deck.cards === 0 || 
+      (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true))
+    ){
       return true
     }else{
       return false
@@ -129,8 +131,8 @@ class Game extends Component {
   }
 
   render(){
-    console.log("From Game")
-    debugger
+    // console.log("From Game")
+    // debugger
     return(
       <div className="game">
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
