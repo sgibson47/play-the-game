@@ -5,6 +5,7 @@ import Piles from './Piles'
 import MakeMove from '../components/MakeMove'
 import BadMove from '../components/BadMove'
 import EndTurn from '../components/EndTurn'
+import GameOver from '../components/GameOver'
 
 class Game extends Component {
 
@@ -135,6 +136,7 @@ class Game extends Component {
     // debugger
     return(
       <div className="game">
+        <GameOver render={this.gameOver()}/>
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
         <Piles 
           piles={this.props.currentGame.piles}
