@@ -8,12 +8,10 @@ class MakeMove extends Component {
       pile_id: this.props.selectedPile.id
     };
 
-    const data = {
-      pile_id: this.props.selectedPile.id,
-      card: this.props.selectedCard
-    };
+    const cardId = this.props.selectedCard.id
 
     this.props.makeMove(move)
+    this.props.addMove(cardId)
     this.props.deselectCard()
     this.props.deselectPile()
   }
