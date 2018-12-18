@@ -91,9 +91,10 @@ export const endTurn = () =>{
       }
     })
       .then(response => response.json())
-      .then(response => console.log('Success:', JSON.stringify(response)))
-      // .then(game => dispatch(setGame(game)))
-      // .catch(error => console.log(error))
+      // .then(response => console.log('Success:', JSON.stringify(response)))
+      .then(game => dispatch(setGame(game)))
+      .then(dispatch(clearMoves()))
+      .catch(error => console.log(error))
   }
 }
 
