@@ -38,9 +38,14 @@ class Api::GamesController < ApplicationController
   def update
     if game_params[:newMove]
       makeMove(game_params[:newMove])
-      # dealUpToSeven(@game)
+      if !gameOver(@game)
+        @game.status = false
+      end
     elsif game_params[:endTurn]
       dealUpToSeven(@game)
+      if !gameOver(@game)
+        @game.status = false
+      end
     end
 
     game = Game.find_by(id: @game.id)
@@ -86,5 +91,66 @@ class Api::GamesController < ApplicationController
     card.save
     pile.save
   end
+
+  def topMostCardsAsc(game)
+    cards = []
+    game.piles.each do |pile|
+      if pile.asc == true
+        cards << pile.cards.mostRecentlyUpdated.one[0]
+      end
+    end
+    return cards
+  end
+
+  def topMostCardsDesc(game)
+    cards = []
+    game.piles.each do |pile|
+      if pile.asc != true
+        cards << pile.cards.mostRecentlyUpdated.one[0]
+      end
+    end
+    return cards
+  end
+
+  def playableOnAsc(game)
+    topCards = topMostCardsAsc(game)
+    array = []
+    game.hand.cards.each do |card|
+      if topCards[0] == nil || topCards[1] == nil 
+        array << true
+      elsif card.value < topCards[0].value && card.value < topCards[1].value
+        array << false
+      else
+        array << true
+      end
+    end
+    return array
+  end
+
+  def playableOnDesc(game)
+    topCards = topMostCardsDesc(game)
+    array = []
+    game.hand.cards.each do |card|
+      if topCards[0] == nil || topCards[1] == nil 
+        array << true
+      elsif card.value > topCards[0].value && card.value > topCards[1].value
+        array << false
+      else
+        array << true
+      end
+    end
+    return array
+  end
+
+
+  def gameOver(game)
+    if game.deck.cards.length == 0 || (playableOnDesc(game).include?(true) && !playableOnAsc(game).include?(true))
+      return true
+    else 
+      return false
+    end
+  end
+
+
 
 end
