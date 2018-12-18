@@ -81,11 +81,11 @@ export const makeMove = move =>{
   }
 }
 
-export const endGame = () =>{
+export const endTurn = () =>{
   return dispatch => {
     return fetch(`${API_URL}/games/1`, {
       method: 'PUT',
-      body: JSON.stringify({game:{ over: true }}),
+      body: JSON.stringify({game:{ endTurn: true }}),
       headers:{
         'Content-Type': 'application/json'
       }
