@@ -50,7 +50,7 @@ class Game extends Component {
   }
 
   playedAtLeastTwo = () =>{
-    if(this.props.moves.length < 2){
+    if(this.props.moves < 2){
       return false
     }else{
       return true
