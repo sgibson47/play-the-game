@@ -115,17 +115,11 @@ class Game extends Component {
     }else{
       return false
     }
-
-    // maybe add a presentational component saying GAME OVER
-    // & conditionally render it based on game's status? the result of this function?
-    // if the game is over maybe this function should trigger an update to the database?
-    // we're gonna need to either set up a new controller for that
-    // or change games#update to do different things depending on the params it recieves
   }
 
   render(){
-    console.log("From Game")
-    debugger
+    // console.log("From Game")
+    // debugger
     return(
       <div className="game">
         <GameOver 
