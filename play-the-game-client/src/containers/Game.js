@@ -123,6 +123,14 @@ class Game extends Component {
     // or change games#update to do different things depending on the params it recieves
   }
 
+  playedCardIds = () =>{
+    if(this.props.movedCardIds === undefined){
+      return []
+    }else{
+      return this.props.movedCardIds
+    }
+  }
+
   componentDidMount(){
     if(this.gameOver){
       this.props.endGame()
@@ -162,7 +170,7 @@ class Game extends Component {
         />
         <Hand 
           cards={this.props.currentGame.hand.cards}
-          playedCardIds={this.props.movedCardIds} 
+          playedCardIds={this.playedCardIds()} 
           selectedCard={this.props.selectedCard}
           selectCard={this.props.selectCard}
           deselectCard={this.props.deselectCard}
