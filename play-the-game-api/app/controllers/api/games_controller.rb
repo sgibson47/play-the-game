@@ -33,7 +33,7 @@ class Api::GamesController < ApplicationController
   #     # 2.times{game.piles.create({"asc":true})}
   #   # make 2 desc piles
   #     # 2.times{game.piles.create({"asc":false})}
-  # end
+  end
 
   def update
     if game_params[:newMove]
