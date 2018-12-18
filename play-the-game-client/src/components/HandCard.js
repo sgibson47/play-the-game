@@ -2,10 +2,8 @@ import React, {Component} from 'react'
 
 class HandCard extends Component {
 
-  handCardClassName = () => {
-    if(this.props.played === "true"){
-      return "HiddenHandCard"
-    }else if(this.props.selectedCard.id === this.props.card.id){
+  handCardClassName = () => { 
+    if(this.props.selectedCard.id === this.props.card.id){
       return "SelectedHandCard"
     }else {
       return "HandCard"

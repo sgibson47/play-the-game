@@ -8,7 +8,6 @@ class Hand extends Component {
           <HandCard 
             card={card} 
             key={card.id} 
-            played={this.props.playedCardIds.includes(card.id) ? "true" : "false"}
             selectCard={this.props.selectCard}
             deselectCard={this.props.deselectCard}
             selectedCard={this.props.selectedCard}

@@ -34,10 +34,9 @@ export const deselectPile = () => {
   }
 }
 
-export const addMove = cardId => {
+export const addMove = () => {
   return{
-    type: 'ADD_MOVE',
-    cardId
+    type: 'ADD_MOVE'
   }
 }
 // maybe we don't need this? 
