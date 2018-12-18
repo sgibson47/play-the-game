@@ -40,6 +40,10 @@ export const addMove = cardId => {
     cardId
   }
 }
+// maybe we don't need this? 
+// if makeMove updates the card's location 
+// and returns a new game object
+// we shouldn't have played cards in the hand anymore
 
 export const clearMoves = () => {
   return{

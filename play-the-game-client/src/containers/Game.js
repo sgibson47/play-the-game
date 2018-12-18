@@ -46,15 +46,7 @@ class Game extends Component {
       return true
     }else{
       return false
-    }
-  }
-
-  playedCardIds = () =>{
-    if(this.props.moves.length === 0){
-      return [0]
-    }else{
-      return this.props.moves.map(move =>move.card_id)
-    }
+    } 
   }
 
   playedAtLeastTwo = () =>{
@@ -170,7 +162,7 @@ class Game extends Component {
         />
         <Hand 
           cards={this.props.currentGame.hand.cards}
-          playedCardIds={this.playedCardIds()} 
+          playedCardIds={this.props.movedCardIds} 
           selectedCard={this.props.selectedCard}
           selectCard={this.props.selectCard}
           deselectCard={this.props.deselectCard}
