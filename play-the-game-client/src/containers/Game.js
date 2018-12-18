@@ -82,7 +82,7 @@ class Game extends Component {
     let array = []
     this.props.currentGame.hand.cards.forEach(
       function (card, index, handCards) {
-        if(card.value < topCards[0] && card.value < topCards[1]){
+        if(card.value < topCards[0].value && card.value < topCards[1].value){
           array.push(false)
         }else{
           array.push(true)
@@ -97,7 +97,7 @@ class Game extends Component {
     let array = []
     this.props.currentGame.hand.cards.forEach(
       function (card, index, handCards) {
-        if(card.value > otherTopCards[0] && card.value > otherTopCards[1]){
+        if(card.value > otherTopCards[0].value && card.value > otherTopCards[1].value){
           array.push(false)
         }else{
           array.push(true)
@@ -123,19 +123,13 @@ class Game extends Component {
     // or change games#update to do different things depending on the params it recieves
   }
 
-  componentDidMount(){
-    if(this.gameOver){
-      this.props.endGame()
-    }
-  }
-
   render(){
-    // console.log("From Game")
-    // debugger
+    console.log("From Game")
+    debugger
     return(
       <div className="game">
         <GameOver 
-          render={this.props.currentGame.status}
+          render={this.gameOver()}
           // this ought to depend on this.props.currentGame.status
           // Game.find_by(id: 1) has status true
           // soo for now true === incomplete game
