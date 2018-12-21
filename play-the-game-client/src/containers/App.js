@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css'
 import Game from './Game'
 import {connect} from 'react-redux'
-import {getGame, selectCard, deselectCard, selectPile, deselectPile, makeMove, endTurn, addMove, clearMoves } from '../actions/game'
+import {getGame, selectCard, deselectCard, selectPile, deselectPile, makeMove, endGame, endTurn, addMove, clearMoves } from '../actions/game'
 
 const API_URL = "http://localhost:3001/api"
 
@@ -34,6 +34,7 @@ class App extends Component {
           endTurn={this.props.endTurn}
           addMove={this.props.addMove}
           clearMoves={this.props.clearMoves}
+          endGame={this.props.endGame}
         />
       </div>
     )
@@ -60,6 +61,7 @@ export default connect(
     makeMove, 
     endTurn, 
     addMove, 
-    clearMoves
+    clearMoves, 
+    endGame
   }
 )(App);
