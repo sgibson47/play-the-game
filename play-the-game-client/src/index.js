@@ -7,12 +7,14 @@ import store from './store'
 import {Provider} from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-ReactDOM.render(
+ReactDOM.render((
   <Provider store={store}>
     <Router>
-      <Route path='/' component={App}/>
+      <React.Fragment>
+        <Route path='/' component={App}/>
+      </React.Fragment>
     </Router>
-  </Provider>, 
+  </Provider>), 
   document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
