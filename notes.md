@@ -299,6 +299,11 @@ what do should happen when it returns true, i.e. when a game is over
   ¿disable game play? 
     meh what's the harm in a player being able to select a card & pile?
 
+---
+
+well crud, I the game returned still has a status of true.
+
+woo saving the game after changing the status fixed it!
 
 
 

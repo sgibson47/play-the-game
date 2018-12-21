@@ -42,6 +42,7 @@ class Api::GamesController < ApplicationController
       dealUpToSeven(@game)
     elsif game_params[:endGame]
       @game.status = false
+      @game.save
     end
 
     game = Game.find_by(id: @game.id)
