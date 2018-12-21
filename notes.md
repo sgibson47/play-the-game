@@ -266,6 +266,28 @@ What's left
 
   clicking "End Turn" should trigger a request to games#upte that deals up to 7 cards and should reset the moves counter
 
+-- 
+what's left toget basic game play working?
+
+need to sort out who will be looking for whether the game has ended and get that working
+ - I've set it up in both front & back end, but neither is sufficient
+ just checking if there are legal moves remaining after each move 
+ doesn't account for when there may be no remaining valid moves based on the current hand,
+ but the player could end the turn and get dealt additional cards
+ If we check whether the game is over only after a turn ends I'm not accounting for when 
+ a game might end mid turn because the player can't play any more of the cards in her hand
+ but she hasn't played at least two cards to complete her turn
+
+ grrrrr
+
+ alright, if the logic of whether the game is over depends how many cards have been played 
+ then we need access to the store where we're counting the number of cards played
+ so, front end it is!
+
+ when is a game over? 
+  when none of the cards in the player's hand are playable on any of the piles
+  AND the player hasn't played at least two cards this turn 
+  (i.e. they can't end their turn and possibly get playable cards from the deck)
 
 
 
