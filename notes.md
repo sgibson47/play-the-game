@@ -289,6 +289,20 @@ need to sort out who will be looking for whether the game has ended and get that
   AND the player hasn't played at least two cards this turn 
   (i.e. they can't end their turn and possibly get playable cards from the deck)
 
+--
+
+I now have a function that accurately checks whether the game is over
+When/where do we want to call it?
+AND
+what do should happen when it returns true, i.e. when a game is over
+  need to change the game's status in the db to false
+  ¿disable game play? 
+    meh what's the harm in a player being able to select a card & pile?
+
+
+
+
+
 
 
 
