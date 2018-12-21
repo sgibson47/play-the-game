@@ -130,6 +130,14 @@ class Game extends Component {
     }
   }
 
+  componentDidMount(){
+    if(this.props.currentGame.status !== false){
+      if(this.gameOver()){
+        this.props.endGame()
+      }
+    }
+  }
+
   render(){
     // console.log("From Game")
     // debugger
