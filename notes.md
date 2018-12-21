@@ -226,26 +226,7 @@ What we can do now,
   I store moves client side and persist them at the end of each turn.
   At the end of each turn I deal enough cards to ge the player back up to seven cards in their hand. 
 
-What's left 
-  X1. checking to see if game is over -- i.e. deck runs out or no more possible moves
-  2. behavior when game ends
-      - update game's status attr to false
-      - ¿is this when we'll ask for the player's name to display on a leader board?
-      - some indication on the game's show page that the game cannot be played further
-  3. routing
-      - get to game's show page via client side routing
-      - dynamically generate url to send get & put requests for games with different ids
-  4. index
-      - list of games indicating status, . . . ? deck's cardCount
-      - or just have this be a list of active games
-  5. leader board
-      - list of completed games sorted by cards left in deck
-      - display cards left in deck, playerName
-  6. Link/button to create a new game 
-      - spins up a new game (give it piles, a deck, a hand, give the deck card 2-99 & shuffle, deal 7 cards to the hand)
-      - ask for playerName here?
-  7. Header & footer with nav links
-  8. ability to delete a game?
+
 
   is it 12 commits that make the git hub tracker go slightly darker?
 
@@ -305,6 +286,28 @@ well crud, I the game returned still has a status of true.
 
 woo saving the game after changing the status fixed it!
 
+--- 
+
+What's left 
+  X 1. checking to see if game is over -- i.e. deck runs out or no more possible moves
+  X 2. behavior when game ends
+      - update game's status attr to false
+      - ¿is this when we'll ask for the player's name to display on a leader board?
+      - some indication on the game's show page that the game cannot be played further
+  3. routing
+      - get to game's show page via client side routing
+      - dynamically generate url to send get & put requests for games with different ids
+  4. index
+      - list of games indicating status, . . . ? deck's cardCount
+      - or just have this be a list of active games
+  5. leader board
+      - list of completed games sorted by cards left in deck
+      - display cards left in deck, playerName
+  6. Link/button to create a new game 
+      - spins up a new game (give it piles, a deck, a hand, give the deck card 2-99 & shuffle, deal 7 cards to the hand)
+      - ask for playerName here?
+  7. Header & footer with nav links
+  8. ability to delete a game?
 
 
 
