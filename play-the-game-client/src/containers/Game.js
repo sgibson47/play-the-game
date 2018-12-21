@@ -57,71 +57,78 @@ class Game extends Component {
     }
   }
   
-  // topMostCardsAsc = () =>{
-  //   let cards = []
-  //   this.props.currentGame.piles.forEach(function (pile, index, piles){
-  //     if(pile.asc === true){
-  //       cards.push(pile.topMostCard)
-  //     } 
-  //   })
-  //   return cards
-  // }
+  topMostCardsAsc = () =>{
+    let cards = []
+    this.props.currentGame.piles.forEach(function (pile, index, piles){
+      if(pile.asc === true){
+        cards.push(pile.topMostCard)
+      } 
+    })
+    return cards
+  }
 
-  // topMostCardsDesc = () =>{
-  //   let cards = []
-  //   this.props.currentGame.piles.forEach(function (pile, index, piles){
-  //     if(pile.asc !== true){
-  //       cards.push(pile.topMostCard)
-  //     } 
-  //   }) 
-  //   return cards
-  // } 
+  topMostCardsDesc = () =>{
+    let cards = []
+    this.props.currentGame.piles.forEach(function (pile, index, piles){
+      if(pile.asc !== true){
+        cards.push(pile.topMostCard)
+      } 
+    }) 
+    return cards
+  } 
 
-  // playableOnAsc = ()=>{
-  //   let topCards = this.topMostCardsAsc()
-  //   let array = []
-  //   this.props.currentGame.hand.cards.forEach(
-  //     function (card, index, handCards) {
-  //       if (topCards){
-  //         if(card.value < topCards[0].value && card.value < topCards[1].value){
-  //           array.push(false)
-  //         }else{
-  //           array.push(true)
-  //         }
-  //       }
-  //     }
-  //   )
-  //   return array
-  // }
+  playableOnAsc = ()=>{
+    let topCards = this.topMostCardsAsc()
+    let array = []
+    this.props.currentGame.hand.cards.forEach(
+      function (card, index, handCards) {
+        if (topCards){
+          if(card.value < topCards[0].value && card.value < topCards[1].value){
+            array.push(false)
+          }else{
+            array.push(true)
+          }
+        }
+      }
+    )
+    return array
+  }
   
-  // playableOnDesc = () => {
-  //   let otherTopCards = this.topMostCardsDesc()
-  //   let array = []
-  //   this.props.currentGame.hand.cards.forEach(
-  //     function (card, index, handCards) {
-  //       if (otherTopCards){
-  //         if(card.value > otherTopCards[0].value && card.value > otherTopCards[1].value){
-  //           array.push(false)
-  //         }else{
-  //           array.push(true)
-  //         }
-  //       }else{
-  //         array.push(true)
-  //       }
-  //     }
-  //   )
-  //   return array
-  // }
+  playableOnDesc = () => {
+    let otherTopCards = this.topMostCardsDesc()
+    let array = []
+    this.props.currentGame.hand.cards.forEach(
+      function (card, index, handCards) {
+        if (otherTopCards){
+          if(card.value > otherTopCards[0].value && card.value > otherTopCards[1].value){
+            array.push(false)
+          }else{
+            array.push(true)
+          }
+        }else{
+          array.push(true)
+        }
+      }
+    )
+    return array
+  }
 
-  // gameOver = () =>{
-  //   if(this.props.currentGame.deck.cards === 0 || 
-  //     (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true))
-  //   ){
-  //     return true
-  //   }else{
-  //     return false
-  //   }
-  // }
+  gameOver = () =>{
+    if(this.playedAtLeastTwo()){
+      // if player has played at least 2 cards, the game isn't over b/c they can get more cards to play
+      return false
+    }else{
+      // if the player has played 0 or 1 cards, then the game is over 
+      // if they cannot play any of the cards currently in their hand
+      if(this.props.currentGame.deck.cards === 0 || 
+        (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true))
+      ){
+        return true
+      }else{
+        return false
+      }
+    }
+  }
 
   render(){
     // console.log("From Game")
