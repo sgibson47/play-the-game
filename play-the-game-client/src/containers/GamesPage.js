@@ -1,5 +1,5 @@
 import React from 'react';
-// import GamesList from '../components/GamesList';
+import GamesList from '../components/GamesList';
 
 const GamesPage = ({ games }) => (
   <div>

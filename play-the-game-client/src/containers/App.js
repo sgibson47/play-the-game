@@ -1,42 +1,62 @@
 import React, {Component} from 'react';
 import './App.css'
 import Game from './Game'
+import GamesPage from './GamesPage'
 import {connect} from 'react-redux'
 import {getGame, selectCard, deselectCard, selectPile, deselectPile, makeMove, endGame, endTurn, addMove, clearMoves } from '../actions/game'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const API_URL = "http://localhost:3001/api"
 
 class App extends Component {
 
-  componentDidMount(){
-    this.props.getGame()
+  state = {
+    games: {
+      1: { id: 1, status: false, playerName: "Sam" },
+      2: { id: 1, status: true, playerName: "Steven" },
+      3: { id: 1, status: false, playerName: "Garnet" }
+    }
   }
 
   render(){
     // console.log("From App")
     // debugger
     return(
-      <div className="App">
-        <h1>Play The Game</h1>
-        <Game 
-          currentGame={this.props.currentGame}
-          moves={this.props.movesData.moves}
-          selectedCard={this.props.selectedCard} 
-          selectedPile={this.props.selectedPile}
-          
-          selectCard={this.props.selectCard}
-          deselectCard={this.props.deselectCard}
-          
-          selectPile={this.props.selectPile}
-          deselectPile={this.props.deselectPile}
-          
-          makeMove={this.props.makeMove}
-          endTurn={this.props.endTurn}
-          addMove={this.props.addMove}
-          clearMoves={this.props.clearMoves}
-          endGame={this.props.endGame}
-        />
-      </div>
+      <Router>
+        <div>
+          <Route exact path="/" render={() => <div className="App"><h1>Play The Game</h1></div>} />
+          <Route 
+            exact path='/games' 
+            render={
+              routerProps => <GamesPage {...routerProps} games={this.state.games}/>} />
+          <Route 
+            exact path='/games/:gameId' 
+            render={
+              routerProps => 
+                <Game 
+                  {...routerProps} 
+                  currentGame={this.props.currentGame}
+                  moves={this.props.movesData.moves}
+                  selectedCard={this.props.selectedCard} 
+                  selectedPile={this.props.selectedPile}
+                  
+                  selectCard={this.props.selectCard}
+                  deselectCard={this.props.deselectCard}
+                  
+                  selectPile={this.props.selectPile}
+                  deselectPile={this.props.deselectPile}
+                  
+                  makeMove={this.props.makeMove}
+                  endTurn={this.props.endTurn}
+                  addMove={this.props.addMove}
+                  clearMoves={this.props.clearMoves}
+                  endGame={this.props.endGame}
+                  getGame={this.props.getGame}
+                />
+            } 
+          />   
+        </div>
+      </Router>
     )
   }
 }
