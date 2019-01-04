@@ -317,6 +317,11 @@ What's left
   3.
     NavBar on all urls
 
+Right now, 
+GET /games/:gameId displays the game whose id attribute's value is 1 regardless of the value provided for gameId in the url. 
+
+Let's find out when & where the fetch request to the backend is occurring.
+
 
 
 
