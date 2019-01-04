@@ -322,6 +322,23 @@ GET /games/:gameId displays the game whose id attribute's value is 1 regardless 
 
 Let's find out when & where the fetch request to the backend is occurring.
 
+mmk, we got these 2 in the Console:
+
+1) Success: from endGame
+tells me:
+Navigating to /games/:gameId triggers endGame, a function that dispatches a PUT request to /games/1 via fetch.  
+
+
+2) Error: Given action "GET_GAME_SUCCESS", reducer "game" returned undefined. To ignore an action, you must explicitly return the previous state. If you want this reducer to hold no value, you can return null instead of undefined.
+
+When endGame's fetch function's promise resolves, endGame dispatches setGame with ...
+
+oh, I see what caused this error.  
+The anonymous function that logged 'Success: from endGame' and and the data returned from the server, did not pass the returned data on to the subsequent then call. As a result, setGame was dispatched with undefined as its argument instead of the expected data representing a game. 
+
+
+mmk,
+&
 
 
 

@@ -109,7 +109,7 @@ export const endGame = () =>{
       }
     })
       .then(response => response.json())
-      .then(response => console.log('Success: from endGame', JSON.stringify(response)))
+      // .then(response => console.log('Success: from endGame', JSON.stringify(response)))
       .then(game => dispatch(setGame(game)))
       .catch(error => console.log(error))
   }
