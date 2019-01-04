@@ -119,7 +119,9 @@ class Game extends Component {
       return false
     }else{
       // if the player has played 0 or 1 cards, then we should check whether the game is over 
-      if(this.props.currentGame.deck.cardCount === -1 && (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true)){
+      if(
+        this.props.currentGame.deck.cardCount === -1 && (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true))
+        ){
         // if the game is in its initial state, it's not over
         return false
       }else if(this.props.currentGame.deck.cardCount === 0 && this.props.currentGame.hand.cards.length === 0){
