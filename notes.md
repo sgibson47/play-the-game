@@ -337,8 +337,97 @@ oh, I see what caused this error.
 The anonymous function that logged 'Success: from endGame' and and the data returned from the server, did not pass the returned data on to the subsequent then call. As a result, setGame was dispatched with undefined as its argument instead of the expected data representing a game. 
 
 
-mmk,
-&
+mmk, back to the client to see when endGame is being triggered. 
+
+/containers/Game:
+  componentDidMount(){
+    if(this.props.currentGame.status !== false){
+      if(this.gameOver()){
+        this.props.endGame()
+      }
+    }
+  }
+
+When the Game component mounts, 
+check to see if the value of the Game component's props's currentGame's status isn't false.  
+If it isn't, 
+check to see if the gameOver function returns true. 
+If it does, 
+call the function endGame stored in the Game component's props.
+
+hrm . . . 
+The initial currentGame held in redux's store & mapped to the App component's props & passed down to Game via props has a status of true. 
+
+Thus, when Game mounts, this.props.currentGame.status is indeed not false and the condition of the first if statement will evaluate to true. 
+
+Because endGame is being called, we know that the initial currentGame must cause gameOver to evaluate to true.
+
+/containers/Game:
+  gameOver = () =>{
+    if(this.playedAtLeastTwo()){
+      // if player has played at least 2 cards, the game isn't over b/c they can get more cards to play
+      return false
+    }else{
+      // if the player has played 0 or 1 cards, then the game is over 
+      // if they cannot play any of the cards currently in their hand
+      if(this.props.currentGame.deck.cards === 0 || 
+        (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true))
+      ){
+        return true
+      }else{
+        return false
+      }
+    }
+  }
+
+
+Yup, that checks out. 
+
+The initial moves count in redux's store is 0, so the this.playedAtLeastTwo will evaluate to false.
+
+As a result, gameOver will check the size of the currentGame's deck and whether any of the curentGame's hand's cards could be played on the game's piles. 
+
+The initial currentGame's deck has a cardCount of -1, thus the first option of if statement's conditional will be false.
+
+The initial currentGame's hand's cards collection is empty, thus the collections resulting from playableOnDesc() & playableOnAsc() won't include any true elements. 
+
+The client thinks the initial game is over & telss the backend to update the databse to reflect that conclusion. 
+
+I need to update gameOver to enable it to recognize that the initial currentGame isn't over. 
+
+
+
+Scenarios & desired result from gameOver:
+1. initial currentGame
+
+this.props.currentGame.deck.cardCount === -1 
+&& 
+(
+!this.playableOnDesc().includes(true) 
+&& 
+!this.playableOnAsc().includes(true)
+)
+
+expect to return false
+
+2. Game over buy win
+currentGame.deck.cardCount === 0 
+&&
+currentGame.hand.cards.length === 0
+
+expect to return true
+
+3. out of playable cards, but can get more
+
+expect to return false
+
+
+4. out of playable cards & cannot get more 
+
+expect to return true
+
+
+
 
 
 

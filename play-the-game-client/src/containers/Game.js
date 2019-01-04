@@ -118,11 +118,17 @@ class Game extends Component {
       // if player has played at least 2 cards, the game isn't over b/c they can get more cards to play
       return false
     }else{
-      // if the player has played 0 or 1 cards, then the game is over 
-      // if they cannot play any of the cards currently in their hand
-      if(this.props.currentGame.deck.cards === 0 || 
-        (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true))
-      ){
+      // if the player has played 0 or 1 cards, then we should check whether the game is over 
+      if(this.props.currentGame.deck.cardCount === -1 && (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true)){
+        // if the game is in its initial state, it's not over
+        return false
+      }else if(this.props.currentGame.deck.cardCount === 0 && this.props.currentGame.hand.cards.length === 0){
+        // if the player has depleted the deck and played all the cards in her hand, it's over
+        return true
+      }else if(
+        this.props.currentGame.deck.cardCount >= 0 && (!this.playableOnDesc().includes(true) && !this.playableOnAsc().includes(true))
+        ){
+        // if the deck isn't as it starts, then player hasn't played 2 cards
         return true
       }else{
         return false
