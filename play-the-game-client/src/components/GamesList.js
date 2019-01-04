@@ -10,6 +10,7 @@ const GamesList = ({ games }) => {
 
   return (
     <div>
+      <h1>All the Games!</h1>
       <ul>
         {renderGames}
       </ul>

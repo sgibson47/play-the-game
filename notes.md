@@ -309,6 +309,14 @@ What's left
   7. Header & footer with nav links
   8. ability to delete a game?
 
+2019-1-4 Goals:
+  1.
+    GET /games/:gameId - displays the game whose id attribute matches the value of :gameId
+  2.
+    GET /games - displays a list of games from the db
+  3.
+    NavBar on all urls
+
 
 
 
