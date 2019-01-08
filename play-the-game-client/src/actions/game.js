@@ -60,7 +60,15 @@ export const getGame = (gameId) =>{
     return fetch(`${API_URL}/games/${gameId}`)
       .then(response => response.json())
       // .then(response => console.log('Success: from getGame', JSON.stringify(response)))
-      .then(game => dispatch(setGame(game)))
+      .then(
+        game => {
+            if(game===null){
+
+            }else{
+              dispatch(setGame(game))
+            }
+          }
+        )
       .catch(error => console.log(error))
   }
 }
@@ -92,7 +100,7 @@ export const endTurn = () =>{
       }
     })
       .then(response => response.json())
-      .then(response => console.log('Success: from endTurn', JSON.stringify(response)))
+      // .then(response => console.log('Success: from endTurn', JSON.stringify(response)))
       .then(game => dispatch(setGame(game)))
       .then(dispatch(clearMoves()))
       .catch(error => console.log(error))
@@ -109,7 +117,7 @@ export const endGame = () =>{
       }
     })
       .then(response => response.json())
-      .then(response => console.log('Success: from endGame', JSON.stringify(response)))
+      // .then(response => console.log('Success: from endGame', JSON.stringify(response)))
       .then(game => dispatch(setGame(game)))
       .catch(error => console.log(error))
   }
