@@ -11,11 +11,11 @@ const API_URL = "http://localhost:3001/api"
 class App extends Component {
 
   state = {
-    games: {
-      1: { id: 1, status: false, playerName: "Sam" },
-      2: { id: 1, status: true, playerName: "Steven" },
-      3: { id: 1, status: false, playerName: "Garnet" }
-    }
+    games: [
+      {"id": 1, "status": false, "playerName": "Sam"},
+      {"id": 2, "status": true, "playerName": "Steven"},
+      {"id": 1, "status": true, "playerName": "Garnet"}
+    ]
   }
 
   render(){
