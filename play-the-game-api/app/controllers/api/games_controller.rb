@@ -2,7 +2,7 @@ class Api::GamesController < ApplicationController
   before_action :set_game, only: [:show, :update, :destroy]
 
   def index
-    render json: Game.all, include: '**'
+    render json: Game.all, include: [:id, :status, :playerName]
   end
 
   def show
