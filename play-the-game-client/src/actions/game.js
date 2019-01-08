@@ -123,3 +123,12 @@ export const endGame = () =>{
   }
 }
 
+export const getGames = () =>{
+  return dispatch => {
+    return fetch(`${API_URL}/games`)
+      .then(response => response.json())
+      .then(response => console.log('Success: from getGame', JSON.stringify(response)))
+      .catch(error => console.log(error))
+  }
+}
+
