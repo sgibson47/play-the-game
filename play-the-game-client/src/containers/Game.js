@@ -114,8 +114,9 @@ class Game extends Component {
   }
 
   gameOver = () =>{
-    if(this.playedAtLeastTwo()){
-      // if player has played at least 2 cards, the game isn't over b/c they can get more cards to play
+    if(this.playedAtLeastTwo() && this.props.currentGame.deck.cardCount > 0){
+      // if player has played at least 2 cards && there are cards remaining in the deck
+      // the game isn't over b/c they can get more cards to play
       return false
     }else{
       // if the player has played 0 or 1 cards, then we should check whether the game is over 
