@@ -145,7 +145,9 @@ class Game extends Component {
         this.props.endGame()
       }
     }
-    this.props.getGame()
+    this.props.getGame(
+      this.props.match.params.gameId
+      )
   }
 
   render(){

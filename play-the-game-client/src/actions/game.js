@@ -55,9 +55,9 @@ export const updateTopCard = data => {
 }
 
 //** Async Actions **
-export const getGame = () =>{
+export const getGame = (gameId) =>{
   return dispatch => {
-    return fetch(`${API_URL}/games/1`)
+    return fetch(`${API_URL}/games/${gameId}`)
       .then(response => response.json())
       // .then(response => console.log('Success: from getGame', JSON.stringify(response)))
       .then(game => dispatch(setGame(game)))
