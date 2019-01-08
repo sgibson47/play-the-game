@@ -54,6 +54,13 @@ export const updateTopCard = data => {
   }
 }
 
+const setGames = games => {
+  return{
+    type: 'GET_GAMES_SUCCESS',
+    games
+  }
+}
+
 //** Async Actions **
 export const getGame = (gameId) =>{
   return dispatch => {
@@ -83,7 +90,7 @@ export const makeMove = move =>{
       }
     })
       .then(response => response.json())
-      .then(response => console.log('Success: from makeMove', JSON.stringify(response)))
+      // .then(response => console.log('Success: from makeMove', JSON.stringify(response)))
       .then(game => dispatch(setGame(game)))
       // .then(dispatch(clearMoves()))
       .catch(error => console.log(error))
