@@ -427,6 +427,27 @@ expect to return false
 expect to return true
 
 
+2019-1-10:
+  X1.
+    GET /games/:gameId - displays the game whose id attribute matches the value of :gameId
+  2.
+    GET /games - displays a list of games from the db
+  3. 
+    enable GET /games/:gameId to 
+    display some warning/ notification to the user when they browse to a :gameId that doesn't have a game in the db associated with it ( game was deleted or hasn't been created )
+  4.
+    NavBar on all urls
+  5. set up form | button to creat a new game from ?
+        ¿ /games | / | all (¿ somewhere on each page | in navbar)
+
+I've made a start on #2.
+
+I have code that creates a list of links to react routes generated based on hardcoded data saved in App's state and passed down to GamesList via props. But, I'm getting this 'Warning: Each child in an array or iterator should have a unique "key" prop.' when the code runs. 
+
+I want to sort this. Then, make it so the list of links is based on data fetched from the db. 
+
+
+
 
 
 
