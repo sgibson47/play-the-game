@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css'
 import Game from './Game'
 import GamesPage from './GamesPage'
+import NavBar from '../components/NavBar'
 import {connect} from 'react-redux'
 import {
   getGame, 
@@ -27,6 +28,7 @@ class App extends Component {
     return(
       <Router>
         <div>
+          <NavBar />
           <Route exact path="/" render={() => <div className="App"><h1>Play The Game</h1></div>} />
           <Route 
             exact path='/games' 

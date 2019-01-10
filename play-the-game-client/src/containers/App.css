@@ -116,3 +116,12 @@
   display: none;
 }
 
+.NavBar{
+  text-align: center
+}
+
+.NavBar a{
+  width: 23%;
+  margin: 1%;
+}
+
