@@ -430,16 +430,17 @@ expect to return true
 2019-1-10:
   X1.
     GET /games/:gameId - displays the game whose id attribute matches the value of :gameId
-  2.
+  X2.
     GET /games - displays a list of games from the db
-  3. 
+  3.
+    NavBar on all urls
+  4. set up form | button to creat a new game from ?
+        ¿ /games | / | all (¿ somewhere on each page | in navbar)
+  5. 
     enable GET /games/:gameId to 
     display some warning/ notification to the user when they browse to a :gameId that doesn't have a game in the db associated with it ( game was deleted or hasn't been created )
-  4.
-    NavBar on all urls
-  5. set up form | button to creat a new game from ?
-        ¿ /games | / | all (¿ somewhere on each page | in navbar)
 
+2:
 I've made a start on #2.
 
 I have code that creates a list of links to react routes generated based on hardcoded data saved in App's state and passed down to GamesList via props. But, I'm getting this 'Warning: Each child in an array or iterator should have a unique "key" prop.' when the code runs. 
@@ -449,6 +450,18 @@ I want to sort this. Then, make it so the list of links is based on data fetched
 After lots of futzing and trying to get fix this, I discovered the issue was in my hardcoded data.  I had given two of the game the same id. 
 
 So now it works, but there's no reason to have changed the way I did it.  I'm gonna leave it b/c it works so I see no reason to change it back. 
+
+
+3:
+What do I want in my NavBar?
+Links to:
+  - /games/new; "New Game"
+    displays a form to create a new game that when submitted creates a new game in the database and redirects the user to the new game's show page so that she may begin to play
+  - /games; "Index of Games"
+    displays a list of links to the show pages of existing games in the database
+  - /rules; "Rules"
+    displays the rules re how to play The Game
+
 
 
 
