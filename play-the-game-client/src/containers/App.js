@@ -4,6 +4,7 @@ import Game from './Game'
 import GamesPage from './GamesPage'
 import NavBar from '../components/NavBar'
 import Rules from '../components/Rules'
+import NewGame from '../components/NewGame'
 import {connect} from 'react-redux'
 import {
   getGame, 
@@ -32,6 +33,7 @@ class App extends Component {
           <NavBar />
           <Route exact path="/" render={() => <div className="App">Root</div>} />
           <Route exact path="/rules" render={Rules}/>
+          <Route exact path="/new" component={NewGame}/>
           <Route 
             exact path='/games' 
             render={

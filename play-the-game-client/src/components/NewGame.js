@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
 
-class NewGameForm extends Component {
+class NewGame extends Component {
   constructor(props){
     super(props);
     this.state={
       playerName: ''
     };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event){
+    this.setState({playerName: event.target.value})
   }
 
   render(){
@@ -22,3 +28,5 @@ class NewGameForm extends Component {
     )
   }
 }
+
+export default NewGame;
