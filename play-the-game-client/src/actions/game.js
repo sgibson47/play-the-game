@@ -134,7 +134,8 @@ export const getGames = () =>{
   return dispatch => {
     return fetch(`${API_URL}/games`)
       .then(response => response.json())
-      .then(response => console.log('Success: from getGames', JSON.stringify(response)))
+      // .then(response => console.log('Success: from getGames', JSON.stringify(response)))
+      .then(games => dispatch(setGames(games)))
       .catch(error => console.log(error))
   }
 }

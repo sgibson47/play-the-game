@@ -3,20 +3,23 @@ import './App.css'
 import Game from './Game'
 import GamesPage from './GamesPage'
 import {connect} from 'react-redux'
-import {getGame, selectCard, deselectCard, selectPile, deselectPile, makeMove, endGame, endTurn, addMove, clearMoves } from '../actions/game'
+import {
+  getGame, 
+  selectCard, 
+  deselectCard, 
+  selectPile, 
+  deselectPile, 
+  makeMove, 
+  endGame, 
+  endTurn, 
+  addMove, 
+  clearMoves,
+  getGames } from '../actions/game'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const API_URL = "http://localhost:3001/api"
 
 class App extends Component {
-
-  state = {
-    games: [
-      {"id": 1, "status": false, "playerName": "Sam"},
-      {"id": 2, "status": true, "playerName": "Steven"},
-      {"id": 3, "status": true, "playerName": "Garnet"}
-    ]
-  }
 
   render(){
     // console.log("From App")
@@ -28,7 +31,14 @@ class App extends Component {
           <Route 
             exact path='/games' 
             render={
-              routerProps => <GamesPage {...routerProps} games={this.state.games}/>} />
+              routerProps => 
+                <GamesPage 
+                  {...routerProps} 
+                  games={this.props.games}
+                  getGames={this.props.getGames}
+                />
+            } 
+          />
           <Route 
             exact path='/games/:gameId' 
             render={
@@ -66,7 +76,8 @@ const mapStateToProps = (state) =>{
     currentGame: state.game,
     selectedCard: state.selectedCard,
     selectedPile: state.selectedPile,
-    movesData: state.movesData
+    movesData: state.movesData,
+    games: state.games
   })
 }
 
@@ -82,6 +93,7 @@ export default connect(
     endTurn, 
     addMove, 
     clearMoves, 
-    endGame
+    endGame,
+    getGames
   }
 )(App);

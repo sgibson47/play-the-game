@@ -14,7 +14,6 @@ function GamesList (props){
 
   return (
     <div>
-      <h1>All the Games!</h1>
       <ul>
         {listItems}
       </ul>
