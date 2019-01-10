@@ -140,3 +140,19 @@ export const getGames = () =>{
   }
 }
 
+export const newGame = (playerName) =>{
+  return dispatch => {
+    return fetch(`${API_URL}/games`, {
+      method: 'POST',
+      body: JSON.stringify({game:{ playerName: playerName }}),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      // .then(response => console.log('Success: from getGames', JSON.stringify(response)))
+      .then(game => dispatch(setGame(game)))
+      .catch(error => console.log(error))
+  }
+}
+
