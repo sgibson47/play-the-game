@@ -11,28 +11,15 @@ class Api::GamesController < ApplicationController
   end
 
   def create
-    game = Game.new(game_params)
+    # make a new game with the playerName
+    game = Game.create(game_params)
+    setUpNewGame(game)
     if game.save
-      render json: game
+      @game = Game.find_by(id: game.id)
+      render json: @game, include: '**'
     else
       render json:{message: game.errors}, status: 400
     end
-
-  #   # every new game
-  #   # make a new game with the playerName
-  #     # game = Game.new(game_params)
-  #   # make a deck
-  #     # game.deck.create
-  #   # give the deck cards 2-99, already shuffled
-  #     # (2..99).to_a.shuffle!.each do |value|
-  #     #   game.deck.cards.create({"value": value})
-  #     # end
-  #   # make a hand
-  #     # game.hand.create
-  #   # make 2 asc piles
-  #     # 2.times{game.piles.create({"asc":true})}
-  #   # make 2 desc piles
-  #     # 2.times{game.piles.create({"asc":false})}
   end
 
   def update
@@ -87,6 +74,25 @@ class Api::GamesController < ApplicationController
     card.whereIsCard = pile
     card.save
     pile.save
+  end
+
+  def setUpNewGame(game)
+    # set status to true
+    game.status = true
+    # make a deck
+    Deck.create(game_id: game.id)
+    # give the deck cards 2-99, already shuffled
+    (2..99).to_a.shuffle!.each do |value|
+      card = game.deck.cards.create({"value": value})
+    end
+    # make a hand
+    Hand.create(game_id: game.id)
+    # make 2 asc piles
+    2.times{Pile.create({"asc":true, game_id: game.id})}
+    # make 2 desc piles
+    2.times{Pile.create({"asc":false, game_id: game.id})}
+    game.save
+    dealUpToSeven(game)
   end
 
 end
