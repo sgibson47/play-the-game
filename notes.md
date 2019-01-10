@@ -432,7 +432,7 @@ expect to return true
     GET /games/:gameId - displays the game whose id attribute matches the value of :gameId
   X2.
     GET /games - displays a list of games from the db
-  3.
+  X 3.
     NavBar on all urls
   4. set up form | button to creat a new game from ?
         ¿ /games | / | all (¿ somewhere on each page | in navbar)
@@ -461,6 +461,13 @@ Links to:
     displays a list of links to the show pages of existing games in the database
   - /rules; "Rules"
     displays the rules re how to play The Game
+
+4:
+Ok, so the back end is all set to take in a playerName and return a game ready to play. 
+
+Next I need to make the front end POST the playerName data to /games and redirect to the new game's show page -- the show page could handle retreiving and setting the currentGame
+
+.... how do I get the page to redirect? 
 
 
 
