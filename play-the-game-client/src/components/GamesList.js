@@ -9,14 +9,15 @@ class GamesList extends Component{
         <h1>All the Games!</h1>
         <ul>
           {this.props.games.map(game =>
-            <li><Link key={game.id} to={`/games/${game.id}`}>
-            {game.playerName}'s game
-            </Link></li>
+            <li>
+              <Link key={game.id} to={`/games/${game.id}`}>
+                {`${game.playerName}'s game`}
+              </Link>
+            </li>
           )}
         </ul>
       </div>
     );
   }
 };
-
 export default GamesList;
