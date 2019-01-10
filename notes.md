@@ -446,6 +446,10 @@ I have code that creates a list of links to react routes generated based on hard
 
 I want to sort this. Then, make it so the list of links is based on data fetched from the db. 
 
+After lots of futzing and trying to get fix this, I discovered the issue was in my hardcoded data.  I had given two of the game the same id. 
+
+So now it works, but there's no reason to have changed the way I did it.  I'm gonna leave it b/c it works so I see no reason to change it back. 
+
 
 
 

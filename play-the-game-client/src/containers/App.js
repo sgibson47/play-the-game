@@ -14,7 +14,7 @@ class App extends Component {
     games: [
       {"id": 1, "status": false, "playerName": "Sam"},
       {"id": 2, "status": true, "playerName": "Steven"},
-      {"id": 1, "status": true, "playerName": "Garnet"}
+      {"id": 3, "status": true, "playerName": "Garnet"}
     ]
   }
 
