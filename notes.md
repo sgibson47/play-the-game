@@ -472,6 +472,25 @@ Next I need to make the front end POST the playerName data to /games and redirec
 start with this example tomorrow:
 https://reacttraining.com/react-router/web/example/auth-workflow
 
+2019-1-11:
+  1. 
+    set up form | button to creat a new game from ?
+          ¿ /games | / | all (¿ somewhere on each page | in navbar)   
+  2. 
+    enable GET /games/:gameId to 
+    display some warning/ notification to the user when they browse to a :gameId that doesn't have a game in the db associated with it ( game was deleted or hasn't been created )
+  3. 
+    Review assignment requirements&&checklist to see if this is sufficient.
+  Add additional functionality to meet project requirements before moving on to styling. 
+
+  4. 
+    style the whole thing 
+  5. 
+    make it clear who developed the game(IDW Games) on the root url & on the rules page -- maybe link to their website?
+    and why you chose it (in the readMe)
+
+
+
 
 
 
