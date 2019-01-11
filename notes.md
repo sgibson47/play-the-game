@@ -467,8 +467,10 @@ Ok, so the back end is all set to take in a playerName and return a game ready t
 
 Next I need to make the front end POST the playerName data to /games and redirect to the new game's show page -- the show page could handle retreiving and setting the currentGame
 
-.... how do I get the page to redirect? 
+.... how do I get the page to redirect?
 
+start with this example tomorrow:
+https://reacttraining.com/react-router/web/example/auth-workflow
 
 
 
