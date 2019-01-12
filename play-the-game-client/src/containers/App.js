@@ -17,7 +17,8 @@ import {
   endTurn, 
   addMove, 
   clearMoves,
-  getGames } from '../actions/game'
+  getGames, 
+  newGame } from '../actions/game'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const API_URL = "http://localhost:3001/api"
@@ -33,7 +34,14 @@ class App extends Component {
           <NavBar />
           <Route exact path="/" render={() => <div className="App">Root</div>} />
           <Route exact path="/rules" render={Rules}/>
-          <Route exact path="/new" component={NewGame}/>
+          <Route exact path="/new" render={
+              routerProps => 
+                <NewGame 
+                  {...routerProps} 
+                  newGame={this.props.newGame}
+                />
+            } 
+          />
           <Route 
             exact path='/games' 
             render={
@@ -100,6 +108,7 @@ export default connect(
     addMove, 
     clearMoves, 
     endGame,
-    getGames
+    getGames,
+    newGame
   }
 )(App);
