@@ -3,6 +3,7 @@ const initialState =
         id: 0,
         status: true,
         playerName: "",
+        moves: 0,
         piles: [
           {
             id: 0,
