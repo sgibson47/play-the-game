@@ -516,6 +516,8 @@ https://reacttraining.com/react-router/web/example/auth-workflow
         - Dave's (id: 14)
         - Pearl's (id: 16)
 
+    Game._this.playableOnDesc doesn't deal with when the top most card on a deck is 'null' i.e. there isn't one
+
   6. 
     Review assignment requirements&&checklist to see if this is sufficient.
     Add additional functionality to meet project requirements before moving on to styling. 

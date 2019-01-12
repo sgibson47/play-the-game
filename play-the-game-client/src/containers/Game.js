@@ -83,7 +83,9 @@ class Game extends Component {
     this.props.currentGame.hand.cards.forEach(
       function (card, index, handCards) {
         if (topCards){
-          if(card.value < topCards[0].value && card.value < topCards[1].value){
+          if(card === null){
+            array.push(true)
+          }else if(card.value < topCards[0].value && card.value < topCards[1].value){
             array.push(false)
           }else{
             array.push(true)
@@ -99,7 +101,9 @@ class Game extends Component {
     let array = []
     this.props.currentGame.hand.cards.forEach(
       function (card, index, handCards) {
-        if (otherTopCards){
+        if (card === null){
+          array.push(true)
+        } else if (card && otherTopCards[0] && otherTopCards[1]){
           if(card.value > otherTopCards[0].value && card.value > otherTopCards[1].value){
             array.push(false)
           }else{
