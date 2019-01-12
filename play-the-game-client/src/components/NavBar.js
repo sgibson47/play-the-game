@@ -5,7 +5,9 @@ function NavBar (){
 
   return (
     <div className="NavBar">
-      <h1 className='NavBar-Header'>Play the Game</h1>
+      <Link to='/'>
+        <h1 className='NavBar-Header'>Play the Game</h1>
+      </Link>
       <Link to='/new'>
         New Game
       </Link>| 
