@@ -490,7 +490,28 @@ https://reacttraining.com/react-router/web/example/auth-workflow
     and why you chose it (in the readMe)
 
 
+2019-1-12:
+  1. 
+    set up form | button to creat a new game from ?
+          ¿ /games | / | all (¿ somewhere on each page | in navbar)   
+  2. 
+    refactor makeMove to take in a gameId & make PUT request to games/:gameId
+  3. 
+    refactor endTurn to take in a gameId & make PUT request to games/:gameId
+  4. 
+    refactor endGame to take in a gameId & make PUT request to games/:gameId
+  5. 
+    enable GET /games/:gameId to 
+    display some warning/ notification to the user when they browse to a :gameId that doesn't have a game in the db associated with it ( game was deleted or hasn't been created )
+  6. 
+    Review assignment requirements&&checklist to see if this is sufficient.
+  Add additional functionality to meet project requirements before moving on to styling. 
 
+  7. 
+    style the whole thing 
+  8. 
+    make it clear who developed the game(IDW Games) on the root url & on the rules page -- maybe link to their website?
+    and why you chose it (in the readMe)
 
 
 
