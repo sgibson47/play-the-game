@@ -109,7 +109,7 @@ export const endTurn = (gameId) =>{
       .then(response => response.json())
       // .then(response => console.log('Success: from endTurn', JSON.stringify(response)))
       .then(game => dispatch(setGame(game)))
-      .then(dispatch(clearMoves()))
+      // .then(dispatch(clearMoves()))
       .catch(error => console.log(error))
   }
 }
@@ -150,7 +150,7 @@ export const newGame = (playerName, history) =>{
       }
     })
       .then(response => response.json())
-      // .then(response => console.log('Success: from getGames', JSON.stringify(response)))
+      // .then(response => console.log('Success: from newGame', JSON.stringify(response)))
       // .then(game => dispatch(setGame(game)))
       .then(game => history.push(`/games/${game.id}`))
       .catch(error => console.log(error))
