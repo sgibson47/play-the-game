@@ -97,9 +97,9 @@ export const makeMove = (move, gameId) =>{
   }
 }
 
-export const endTurn = () =>{
+export const endTurn = (gameId) =>{
   return dispatch => {
-    return fetch(`${API_URL}/games/1`, {
+    return fetch(`${API_URL}/games/${gameId}`, {
       method: 'PUT',
       body: JSON.stringify({game:{ endTurn: true }}),
       headers:{

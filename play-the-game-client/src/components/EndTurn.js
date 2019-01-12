@@ -2,7 +2,13 @@ import React, {Component} from 'react'
 
 class EndTurn extends Component {
 
-  EndTurnClassName = () => {
+  endTurn = () =>{
+    const gameId = this.props.gameId
+
+    this.props.endTurn(gameId)
+  }
+
+  endTurnClassName = () => {
     if(this.props.render){
       return "EndTurn"
     }else {
@@ -15,9 +21,9 @@ class EndTurn extends Component {
     // debugger
     return (
       <div 
-        className={this.EndTurnClassName()} 
+        className={this.endTurnClassName()} 
         >
-        <button onClick={this.props.endTurn}>EndTurn</button>
+        <button onClick={this.endTurn}>EndTurn</button>
       </div>
     )
   }
