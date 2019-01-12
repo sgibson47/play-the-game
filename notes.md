@@ -491,7 +491,7 @@ https://reacttraining.com/react-router/web/example/auth-workflow
 
 
 2019-1-12:
-  1. 
+  X1. 
     set up form | button to creat a new game from ?
           ¿ /games | / | all (¿ somewhere on each page | in navbar)   
   2. 
@@ -512,6 +512,11 @@ https://reacttraining.com/react-router/web/example/auth-workflow
   8. 
     make it clear who developed the game(IDW Games) on the root url & on the rules page -- maybe link to their website?
     and why you chose it (in the readMe)
+
+
+Woo! #1 done!  
+A user can type in a playerName to the form, submit the form and is redirected to the new Game's show page
+
 
 
 
