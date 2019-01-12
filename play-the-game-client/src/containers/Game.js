@@ -173,7 +173,6 @@ class Game extends Component {
         />
         <MakeMove
           makeMove={this.props.makeMove}
-          // addMove={this.props.addMove}
           selectedCard={this.props.selectedCard}
           selectedPile={this.props.selectedPile}
           deselectCard={this.props.deselectCard}

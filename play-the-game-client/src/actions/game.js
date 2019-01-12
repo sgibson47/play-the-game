@@ -34,19 +34,6 @@ export const deselectPile = () => {
   }
 }
 
-export const addMove = () => {
-  return{
-    type: 'ADD_MOVE'
-  }
-}
-
-
-export const clearMoves = () => {
-  return{
-    type: 'CLEAR_MOVES'
-  }
-}
-
 export const updateTopCard = data => {
   return{
     type: 'UPDATE_TOP_CARD',

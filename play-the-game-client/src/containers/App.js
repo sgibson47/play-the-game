@@ -15,8 +15,6 @@ import {
   makeMove, 
   endGame, 
   endTurn, 
-  addMove, 
-  clearMoves,
   getGames, 
   newGame } from '../actions/game'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -60,7 +58,6 @@ class App extends Component {
                 <Game 
                   {...routerProps} 
                   currentGame={this.props.currentGame}
-                  moves={this.props.movesData.moves}
                   selectedCard={this.props.selectedCard} 
                   selectedPile={this.props.selectedPile}
                   
@@ -72,8 +69,6 @@ class App extends Component {
                   
                   makeMove={this.props.makeMove}
                   endTurn={this.props.endTurn}
-                  addMove={this.props.addMove}
-                  clearMoves={this.props.clearMoves}
                   endGame={this.props.endGame}
                   getGame={this.props.getGame}
                 />
@@ -104,9 +99,7 @@ export default connect(
     selectPile, 
     deselectPile, 
     makeMove, 
-    endTurn, 
-    addMove, 
-    clearMoves, 
+    endTurn,  
     endGame,
     getGames,
     newGame
