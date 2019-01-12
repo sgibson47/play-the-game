@@ -114,9 +114,9 @@ export const endTurn = (gameId) =>{
   }
 }
 
-export const endGame = () =>{
+export const endGame = (gameId) =>{
   return dispatch => {
-    return fetch(`${API_URL}/games/1`, {
+    return fetch(`${API_URL}/games/${gameId}`, {
       method: 'PUT',
       body: JSON.stringify({game:{ endGame: true }}),
       headers:{
