@@ -50,7 +50,7 @@ class Game extends Component {
   }
 
   playedAtLeastTwo = () =>{
-    if(this.props.moves < 2){
+    if(this.props.currentGame.moves < 2){
       return false
     }else{
       return true
@@ -173,7 +173,7 @@ class Game extends Component {
         />
         <MakeMove
           makeMove={this.props.makeMove}
-          addMove={this.props.addMove}
+          // addMove={this.props.addMove}
           selectedCard={this.props.selectedCard}
           selectedPile={this.props.selectedPile}
           deselectCard={this.props.deselectCard}
