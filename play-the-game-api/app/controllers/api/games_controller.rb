@@ -25,12 +25,12 @@ class Api::GamesController < ApplicationController
   def update
     if game_params[:newMove]
       makeMove(game_params[:newMove])
-      game.moves += 1 
-      game.save
+      @game.moves += 1 
+      @game.save
     elsif game_params[:endTurn]
       dealUpToSeven(@game)
-      game.moves = 0 
-      game.save
+      @game.moves = 0 
+      @game.save
     elsif game_params[:endGame]
       @game.status = false
       @game.save
