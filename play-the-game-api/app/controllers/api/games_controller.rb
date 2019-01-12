@@ -79,6 +79,8 @@ class Api::GamesController < ApplicationController
   def setUpNewGame(game)
     # set status to true
     game.status = true
+    # set moves counter to 0
+    game.moves = 0
     # make a deck
     Deck.create(game_id: game.id)
     # give the deck cards 2-99, already shuffled
