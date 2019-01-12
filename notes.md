@@ -500,7 +500,7 @@ https://reacttraining.com/react-router/web/example/auth-workflow
     refactor endTurn to take in a gameId & make PUT request to games/:gameId
   X 4. 
     refactor endGame to take in a gameId & make PUT request to games/:gameId
-  5. 
+  X 5. 
     new problem:
       the app breaks when using ¿some? games' link on the games index. I get 'TypeError: Cannot read property 'value' of null'.
       But, when I refresh the browser the app works fine
@@ -519,14 +519,26 @@ https://reacttraining.com/react-router/web/example/auth-workflow
     Game._this.playableOnDesc doesn't deal with when the top most card on a deck is 'null' i.e. there isn't one
 
   6. 
+    right now, if you make a move and then navigate away from the game's show page & come back, then the move you made was preserved (b/c it was updated in the db), BUT the newMoves counter has been wiped out and now you have to play 2 more cards in order to get the "end turn" button to appear so you can get more cards and keep playing 
+
+    fix it, so you can navigate away mid turn and come back to the game where you left off 
+
+    this means the db will have to keep track of the number of card played this turn
+    ¿give the Game model a new attribute? 
+      increment it each move
+      reset it to 0 when turn ends
+
+      get front end to use currentGame's newAttr value to determine whether to display end Turn button
+
+  7. 
     Review assignment requirements&&checklist to see if this is sufficient.
     Add additional functionality to meet project requirements before moving on to styling. 
-  7. 
-    style the whole thing 
   8. 
+    style the whole thing 
+  9. 
     make it clear who developed the game(IDW Games) on the root url & on the rules page -- maybe link to their website?
     and why you chose it (in the readMe)
-  9. 
+  10. 
     enable GET /games/:gameId to 
     display some warning/ notification to the user when they browse to a :gameId that doesn't have a game in the db associated with it ( game was deleted or hasn't been created )
 
