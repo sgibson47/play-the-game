@@ -505,6 +505,16 @@ https://reacttraining.com/react-router/web/example/auth-workflow
       the app breaks when using ¿some? games' link on the games index. I get 'TypeError: Cannot read property 'value' of null'.
       But, when I refresh the browser the app works fine
 
+    all of the games, not all of the time
+
+    /games to /games/:gameId
+      - successful for:
+        - Sam's (id: 1)
+        - Steve's (id: 13)
+        - Greg's (id: 15)
+      - TypeError for:
+        - Dave's (id: 14)
+        - Pearl's (id: 16)
 
   6. 
     Review assignment requirements&&checklist to see if this is sufficient.
