@@ -491,32 +491,32 @@ https://reacttraining.com/react-router/web/example/auth-workflow
 
 
 2019-1-12:
-  X1. 
+  X 1. 
     set up form | button to creat a new game from ?
           ¿ /games | / | all (¿ somewhere on each page | in navbar)   
-  2. 
+  X 2. 
     refactor makeMove to take in a gameId & make PUT request to games/:gameId
-  3. 
+  X 3. 
     refactor endTurn to take in a gameId & make PUT request to games/:gameId
-  4. 
+  X 4. 
     refactor endGame to take in a gameId & make PUT request to games/:gameId
   5. 
-    enable GET /games/:gameId to 
-    display some warning/ notification to the user when they browse to a :gameId that doesn't have a game in the db associated with it ( game was deleted or hasn't been created )
+    new problem:
+      the app breaks when using ¿some? games' link on the games index. I get 'TypeError: Cannot read property 'value' of null'.
+      But, when I refresh the browser the app works fine
+
+
   6. 
     Review assignment requirements&&checklist to see if this is sufficient.
-  Add additional functionality to meet project requirements before moving on to styling. 
-
+    Add additional functionality to meet project requirements before moving on to styling. 
   7. 
     style the whole thing 
   8. 
     make it clear who developed the game(IDW Games) on the root url & on the rules page -- maybe link to their website?
     and why you chose it (in the readMe)
-
-
-Woo! #1 done!  
-A user can type in a playerName to the form, submit the form and is redirected to the new Game's show page
-
+  9. 
+    enable GET /games/:gameId to 
+    display some warning/ notification to the user when they browse to a :gameId that doesn't have a game in the db associated with it ( game was deleted or hasn't been created )
 
 
 
