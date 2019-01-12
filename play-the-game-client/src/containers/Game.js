@@ -176,6 +176,8 @@ class Game extends Component {
           deselectCard={this.props.deselectCard}
           deselectPile={this.props.deselectPile}
           render={this.validMoveSelected()}
+          // ¿change render to className
+          gameId={this.props.match.params.gameId}
         />
         <BadMove render={this.invalidMoveSelected()}/>
         <EndTurn 

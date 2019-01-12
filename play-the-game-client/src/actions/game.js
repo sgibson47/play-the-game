@@ -80,9 +80,9 @@ export const getGame = (gameId) =>{
   }
 }
 
-export const makeMove = move =>{
+export const makeMove = (move, gameId) =>{
   return dispatch => {
-    return fetch(`${API_URL}/games/1`, {
+    return fetch(`${API_URL}/games/${gameId}`, {
       method: 'PUT',
       body: JSON.stringify({game:{ newMove: move }}),
       headers:{

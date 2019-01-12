@@ -10,8 +10,12 @@ class MakeMove extends Component {
 
     const cardId = this.props.selectedCard.id
 
-    this.props.makeMove(move)
+    const gameId = this.props.gameId
+
+    this.props.makeMove(move, gameId)
+    // makes move in db
     this.props.addMove(cardId)
+    // dispatches a reducer that increments redux store's newMoves 
     this.props.deselectCard()
     this.props.deselectPile()
   }
