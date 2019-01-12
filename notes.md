@@ -518,7 +518,7 @@ https://reacttraining.com/react-router/web/example/auth-workflow
 
     Game._this.playableOnDesc doesn't deal with when the top most card on a deck is 'null' i.e. there isn't one
 
-  6. 
+  X 6. 
     right now, if you make a move and then navigate away from the game's show page & come back, then the move you made was preserved (b/c it was updated in the db), BUT the newMoves counter has been wiped out and now you have to play 2 more cards in order to get the "end turn" button to appear so you can get more cards and keep playing 
 
     fix it, so you can navigate away mid turn and come back to the game where you left off 
@@ -530,7 +530,7 @@ https://reacttraining.com/react-router/web/example/auth-workflow
 
       get front end to use currentGame's newAttr value to determine whether to display end Turn button
 
-  7. 
+  X7. 
     Review assignment requirements&&checklist to see if this is sufficient.
     Add additional functionality to meet project requirements before moving on to styling. 
   8. 
