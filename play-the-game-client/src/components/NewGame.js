@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 
 class NewGame extends Component {
   constructor(props){
@@ -17,8 +18,8 @@ class NewGame extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    // some code submitting the form to games#create
-    // dispatching setGame with returned new game info
+    this.props.newGame(this.state.playerName, this.props.history)
+    // this.props.history.push('/games')
     // redirecting to new game's show page 
   }
 
@@ -38,4 +39,4 @@ class NewGame extends Component {
   }
 }
 
-export default NewGame;
+export default withRouter(NewGame);

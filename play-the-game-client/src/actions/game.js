@@ -140,7 +140,7 @@ export const getGames = () =>{
   }
 }
 
-export const newGame = (playerName) =>{
+export const newGame = (playerName, history) =>{
   return dispatch => {
     return fetch(`${API_URL}/games`, {
       method: 'POST',
@@ -151,7 +151,8 @@ export const newGame = (playerName) =>{
     })
       .then(response => response.json())
       // .then(response => console.log('Success: from getGames', JSON.stringify(response)))
-      .then(game => dispatch(setGame(game)))
+      // .then(game => dispatch(setGame(game)))
+      .then(game => history.push(`/games/${game.id}`))
       .catch(error => console.log(error))
   }
 }
