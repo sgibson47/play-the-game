@@ -5,7 +5,6 @@ function Rules (){
   return (
     <div className="Rules">
       <h2>Rules</h2>
-      <h3>The Game -- a card game developed by IDW Games</h3>
       
       <h4>Cards</h4>
         <ul>
