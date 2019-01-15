@@ -153,8 +153,6 @@
   margin-left: 5%;
 }
 
-
-
 .NewGame{
   text-align: center;
   margin-left: 10%;
@@ -172,4 +170,35 @@
   padding: 2%;
   background-color: #BBB6B2;
   opacity: .8;
+}
+
+.Games{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  padding: 2%;
+  background-color: #BBB6B2;
+  opacity: .8;
+}
+
+.Games a{
+  color:  black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.Games a:hover {
+  color: hotpink;
+  text-decoration: none;
+}
+
+.Games h1{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.Games ul{
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 16pt;
 }

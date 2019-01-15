@@ -8,7 +8,7 @@ class GamesPage extends Component {
 
   render(){
     return(
-      <div>
+      <div className="Games">
         <h1>Index of Games</h1>
         <GamesList games={this.props.games} />
       </div>
