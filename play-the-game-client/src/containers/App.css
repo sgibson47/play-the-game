@@ -156,3 +156,13 @@
   color:  #00004d;
   font-weight: bold;
 }
+
+.NewGame{
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  padding: 2%;
+  background-color: #BBB6B2;
+  opacity: .8;
+}

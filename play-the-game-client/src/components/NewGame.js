@@ -25,16 +25,20 @@ class NewGame extends Component {
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-        <label> Player Name:
-          <input 
-            type='text' 
-            value={this.state.playerName}
-            onChange={this.handleChange}
-          />
-        </label>
-        <input type='submit' value='Start New Game'/>
-      </form>
+      <div className='NewGame'>
+        <form onSubmit={this.handleSubmit}>
+          <label> Player Name:
+            <input 
+              type='text' 
+              value={this.state.playerName}
+              onChange={this.handleChange}
+            />
+          </label>
+          <br/>
+          <br/>
+          <input type='submit' value='Start New Game'/>
+        </form>
+      </div>
     )
   }
 }
