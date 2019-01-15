@@ -6,7 +6,7 @@ class Pile extends Component {
   topCardValue = () => {
     const topMostCard = this.props.pile.topMostCard
     if(!topMostCard){
-      return "No cards have been played on this pile, yet."
+      return "No cards have been played on this pile."
     }else{
       return topMostCard.value;
     }
@@ -49,7 +49,6 @@ class Pile extends Component {
   render(){
     return(
       <div className={`${this.pileClassName()}`} onClick={this.handleOnClick}>
-        <p>Count {this.type()}</p>
         <PileCard value ={this.anchor()}/>
         <PileCard value={this.topCardValue()}/> 
       </div>

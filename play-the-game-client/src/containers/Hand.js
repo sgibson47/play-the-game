@@ -18,9 +18,11 @@ class Hand extends Component {
 
   render(){
     return(
-      <div className="Hand">
+      <div className="HandHolder">
         <h3>Your hand:</h3>
-        {this.createHandCards()}
+        <div className="Hand">
+          {this.createHandCards()}
+        </div>
       </div>
     )
   }

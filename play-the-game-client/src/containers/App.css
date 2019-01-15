@@ -5,70 +5,128 @@
 
 .game{
   overflow: auto;
-  padding: 2%;
+  padding: 1%;
+  background-color: rgba(187, 182, 178, .8);
+  margin: 5%;
+}
+
+.GameH1{
+  margin-left: 15%;
 }
 
 .deck {
-  background-color: #a7bfe8;
+  padding: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+.deck .deckCard {
+  background-color: #b3e6ff;
   width: 125px;
   height: 175px;
   border-radius: 7px;
-  margin-left: 30%;
+  margin: auto;
+  font-weight: bold;
 }
 
 .piles{
   clear: left;
+  text-align: center;
+  overflow: auto;
 }
 
 .pile{
-  background-color: #314566 ;
+  background-color: #837C76 ;
   float: left;
-  width: 23%;
+  width: 20%;
   margin: 1%;
+  padding: 1%;
+}
+
+.pile p{
+  clear: left;
+  padding: 1%;
 }
 
 .SelectedPile{
-  background-color: #b9c0cc ;
+  background-color: rgba(255, 105, 180, .6);
   float: left;
-  width: 23%;
+  width: 20%;
   margin: 1%;
+  padding: 1%;
+}
+
+.SelectedPile p{
+  clear: left;
+  padding: 1%;
 }
 
 .PileCard{
-  background-color: #a7bfe8;
+  background-color: #b3e6ff;
   width: 40%;
   border-radius: 7px;
   width: 125px;
   height: 175px;
   float: left;
-  margin-left: 6.5%;
+  margin-left: 20%;
   margin-bottom: 6%;
+  text-align: center;
+}
+
+.PileCard p{
+  font-weight: bold;
+  margin: auto;
+  margin-top: 50%;
+  font-size: 18pt;
+}
+
+.HandHolder{
+  clear: left;
+  text-align: center;
 }
 
 .Hand{
-  background-color: #314566;
+  background-color: #837C76;
   padding: 1%;
   overflow: auto;
   width: 75%;
   margin-left: 10%;
+  text-align: center;
 }
 
 .HandCard{
-  background-color: #a7bfe8;
+  background-color: #b3e6ff;
   width: 125px;
   height: 175px;
   float: left;
   margin: 6px;
   border-radius: 7px;
+  text-align: center;
+}
+
+.HandCard p{
+  font-weight: bold;
+  margin: auto;
+  margin-top: 50%;
+  font-size: 18pt;
 }
 
 .SelectedHandCard{
-  background-color: #5a5e66;
+  background-color: rgba(255, 105, 180, .6);
   width: 125px;
   height: 175px;
   float: left;
   margin: 6px;
   border-radius: 7px;
+  text-align: center;
+}
+
+.SelectedHandCard p{
+  font-weight: bold;
+  margin: auto;
+  margin-top: 50%;
+  font-size: 18pt;
 }
 
 .HiddenHandCard{
@@ -76,7 +134,18 @@
 }
 
 .MakeMove{
-  padding: 2%;
+  padding:1%;
+  background-color: rgba(255, 105, 180, .6);
+  text-align: center;
+  font-size: 18pt;
+  width: 60%;
+  margin-left: 20%
+}
+
+.MakeMove button{
+  font-size: 14pt;
+  border-radius: 7px;
+  margin: 1%;
 }
 
 .HideMakeMove{
@@ -84,7 +153,12 @@
 }
 
 .BadMove{
-  padding: 2%;
+  padding:1%;
+  background-color: rgba(255, 105, 180, .6);
+  text-align: center;
+  font-size: 18pt;
+  width: 60%;
+  margin-left: 20%
 }
 
 .HideBadMove{
@@ -92,7 +166,18 @@
 }
 
 .EndTurn{
-  padding: 2%;
+  padding:1%;
+  background-color: rgba(255, 105, 180, .6);
+  text-align: center;
+  font-size: 18pt;
+  width: 60%;
+  margin-left: 20%
+}
+
+.EndTurn button{
+  font-size: 14pt;
+  border-radius: 7px;
+  margin: 1%;
 }
 
 .HideEndTurn{
@@ -101,6 +186,9 @@
 
 .GameOver{
   padding: 2%;
+  background-color: rgba(255, 105, 180, .6);
+  text-align: center;
+  margin-bottom: 2%;
 }
 
 .HideGameOver{
@@ -161,6 +249,7 @@
   padding: 2%;
   background-color: #BBB6B2;
   opacity: .8;
+  font-size: 14pt;
 }
 
 .Rules{

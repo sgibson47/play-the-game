@@ -2,7 +2,7 @@ import React from 'react'
 
 const PileCard = (props) => (
   <div className="PileCard">
-    {props.value}
+    <p>{props.value}</p>
   </div>
 )
 

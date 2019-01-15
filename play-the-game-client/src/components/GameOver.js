@@ -15,7 +15,7 @@ class GameOver extends Component {
       <div 
         className={this.GameOverClassName()} 
         >
-        GAME OVER
+        <h1>GAME OVER</h1>
       </div>
     )
   }

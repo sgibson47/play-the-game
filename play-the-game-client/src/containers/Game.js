@@ -164,6 +164,7 @@ class Game extends Component {
           // Game.find_by(id: 1) has status true
           // soo for now true === incomplete game
         />
+        <h1 className='GameH1'>{this.props.currentGame.playerName}'s Game</h1>
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
         <Piles 
           piles={this.props.currentGame.piles}

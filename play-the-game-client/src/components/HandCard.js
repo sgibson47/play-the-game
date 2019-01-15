@@ -23,7 +23,7 @@ class HandCard extends Component {
   render(){
     return (
       <div className={`${this.handCardClassName()}`} onClick={this.handleOnClick}>
-        {this.props.card.value}
+        <p>{this.props.card.value}</p>
       </div>
     )
   }
