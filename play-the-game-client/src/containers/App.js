@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import Game from './Game'
-import Background from '../components/Background'
 import GamesPage from './GamesPage'
 import NavBar from '../components/NavBar'
 import Rules from '../components/Rules'
@@ -32,7 +31,6 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-          <Background />
           <Route exact path="/" component={Root} />
           <Route exact path="/rules" render={Rules}/>
           <Route exact path="/new" render={
