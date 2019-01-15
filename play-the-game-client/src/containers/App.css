@@ -1,19 +1,9 @@
 .App {
-  text-align: center;
   background-image: url('/rawpixel-604757-unsplash.jpg');
-}
-
-
-.App-header {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .game{
-  background-color: #5a5e66; 
   overflow: auto;
   padding: 2%;
 }
@@ -118,14 +108,51 @@
 }
 
 .NavBar{
-  text-align: center
+  text-align: center;
+  background-color: #837C76;
+  padding-bottom: 2%;
 }
 
 .NavBar a{
   width: 23%;
   margin: 1%;
+  color:  #00004d;
+  text-decoration: none;
+}
+
+/* mouse over link */
+.NavBar a:hover {
+  color: hotpink;
+  text-decoration: none;
 }
 
 .Root{
   text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  padding: 2%;
+  background-color: #BBB6B2;
+  opacity: .8;
+}
+
+.Root a{
+  color:  #58639B;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.Root p{
+  width: 90%;
+  margin-left: 5%;
+  font-weight: bold;
+}
+
+.Root p.about{
+  width: 90%;
+  margin-left: 5%;
+}
+.Root h2{
+  color:  #00004d;
+  font-weight: bold;
 }
