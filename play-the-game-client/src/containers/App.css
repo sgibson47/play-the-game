@@ -1,17 +1,3 @@
-h2{
-  color:  #00004d;
-  font-weight: bold;
-}
-
-h3{
-  color:  #00004d;
-  font-weight: bold;
-}
-
-h4{
-  font-weight: bold;
-}
-
 .App {
   background-image: url('/rawpixel-604757-unsplash.jpg');
   min-height: 100vh;

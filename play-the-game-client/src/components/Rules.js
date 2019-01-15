@@ -4,22 +4,25 @@ function Rules (){
 
   return (
     <div className="Rules">
-      <h2>Rules</h2>
+      <h1>Rules</h1>
       
-      <h4>Cards</h4>
+      <h3>Goal</h3>
+        <p> 
+          Run out the deck by playing the cards dealt to you in ascending order on the 1 piles or in descending order on the 100 piles. 
+        </p>
+
+      <br/>
+
+      <h3>Cards</h3>
         <ul>
           <li>2 cards with the number 1 on them</li>
           <li>2 cards with the number 100 on them</li>
           <li>98 cards with the numbers 2-99 on them</li>
         </ul>
         
-      
-      <h4>Goal</h4>
-        <p> 
-          Run out the deck by playing the cards dealt to you in ascending order on the 1 piles or in descending order on the 100 piles. 
-        </p>
+      <br/>
 
-      <h4>Basic Game Play</h4>
+      <h3>Basic Game Play</h3>
 
         <p>At the start o f a game, the 1 & 100 cards will be laid out to start the piles and the player will be dealt 7 cards from the the deck into their hand. </p>
 
