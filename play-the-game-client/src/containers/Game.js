@@ -143,14 +143,16 @@ class Game extends Component {
     }
   }
 
+  componentWillMount(){
+    const gameId = this.props.match.params.gameId
+    this.props.getGame(gameId)
+  }
+
   componentDidMount(){
     const gameId = this.props.match.params.gameId
-    if(this.props.currentGame.status !== false){
-      if(this.gameOver()){
-        this.props.endGame(gameId)
-      }
+    if(this.gameOver() ){ 
+      this.props.endGame(gameId)
     }
-    this.props.getGame(gameId)
   }
 
   render(){
