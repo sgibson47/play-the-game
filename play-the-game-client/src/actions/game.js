@@ -101,22 +101,6 @@ export const endTurn = (gameId) =>{
   }
 }
 
-export const endGame = (gameId) =>{
-  return dispatch => {
-    return fetch(`${API_URL}/games/${gameId}`, {
-      method: 'PUT',
-      body: JSON.stringify({game:{ endGame: true }}),
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(response => response.json())
-      // .then(response => console.log('Success: from endGame', JSON.stringify(response)))
-      .then(game => dispatch(setGame(game)))
-      .catch(error => console.log(error))
-  }
-}
-
 export const getGames = () =>{
   return dispatch => {
     return fetch(`${API_URL}/games`)

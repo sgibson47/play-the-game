@@ -13,8 +13,7 @@ import {
   deselectCard, 
   selectPile, 
   deselectPile, 
-  makeMove, 
-  endGame, 
+  makeMove,  
   endTurn, 
   getGames, 
   newGame } from '../actions/game'
@@ -70,7 +69,6 @@ class App extends Component {
                   
                   makeMove={this.props.makeMove}
                   endTurn={this.props.endTurn}
-                  endGame={this.props.endGame}
                   getGame={this.props.getGame}
                 />
             } 
@@ -101,7 +99,6 @@ export default connect(
     deselectPile, 
     makeMove, 
     endTurn,  
-    endGame,
     getGames,
     newGame
   }
