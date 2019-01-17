@@ -38,14 +38,20 @@ class Game < ApplicationRecord
     topCards = self.topMostCardsAsc
     array = []
     self.hand.cards.each do |card|
-      if topCards
-        if !card
-          array.push(true)
-        elsif card.value < topCards[0].value && card.value < topCards[1].value
+      if topCards[0] == nil || topCards[1] == nil
+        array.push(true)
+      elsif topCards[0] != nil && topCards[1] == nil 
+        # evaluate if card can be played on topCards[0]
+        card.value < topCards[0].value ? array.push(false) : array.push(true)
+      elsif topCards[0] == nil && topCards[1] != nil
+        # evaluate if card can be played on topCards[1]
+        card.value < topCards[1].value ? array.push(false) : array.push(true)
+      else # if neither topCards are nil 
+        if card.value < topCards[0].value && card.value < topCards[1].value
           array.push(false)
         else
           array.push(true)
-        end  
+        end
       end
     end
     array
@@ -55,14 +61,20 @@ class Game < ApplicationRecord
     topCards = self.topMostCardsDesc
     array = []
     self.hand.cards.each do |card|
-      if topCards
-        if !card
-          array.push(true)
-        elsif card.value > topCards[0].value && card.value > topCards[1].value
+      if topCards[0] == nil || topCards[1] == nil
+        array.push(true)
+      elsif topCards[0] != nil && topCards[1] == nil 
+        # evaluate if card can be played on topCards[0]
+        card.value > topCards[0].value ? array.push(false) : array.push(true)
+      elsif topCards[0] == nil && topCards[1] != nil
+        # evaluate if card can be played on topCards[1]
+        card.value > topCards[1].value ? array.push(false) : array.push(true)
+      else # if neither topCards are nil 
+        if card.value > topCards[0].value && card.value > topCards[1].value
           array.push(false)
         else
           array.push(true)
-        end  
+        end
       end
     end
     array
