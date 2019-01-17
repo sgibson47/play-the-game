@@ -7,7 +7,7 @@ class Api::GamesController < ApplicationController
 
   def show
     # @game = Game.find_by(id: params[:id])
-    render json: @game, include: '**'
+    render json: @game
   end
 
   def create
@@ -16,7 +16,7 @@ class Api::GamesController < ApplicationController
     setUpNewGame(game)
     if game.save
       @game = Game.find_by(id: game.id)
-      render json: @game, include: '**'
+      render json: @game
     else
       render json:{message: game.errors}, status: 400
     end
@@ -38,7 +38,7 @@ class Api::GamesController < ApplicationController
 
     game = Game.find_by(id: @game.id)
 
-    render json: game, include: '**' 
+    render json: game
   end
 
   def destroy
