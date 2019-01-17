@@ -27,13 +27,18 @@ class Api::GamesController < ApplicationController
       makeMove(game_params[:newMove])
       @game.moves += 1 
       @game.save
+      if @game.over
+        @game.status = false
+        @game.save
+      end
     elsif game_params[:endTurn]
       dealUpToSeven(@game)
       @game.moves = 0 
-      @game.save
-    elsif game_params[:endGame]
-      @game.status = false
-      @game.save
+      @game.save 
+      if @game.over
+        @game.status = false
+        @game.save
+      end
     end
 
     game = Game.find_by(id: @game.id)
