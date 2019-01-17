@@ -19,8 +19,6 @@ class NewGame extends Component {
   handleSubmit(event){
     event.preventDefault();
     this.props.newGame(this.state.playerName, this.props.history)
-    // this.props.history.push('/games')
-    // redirecting to new game's show page 
   }
 
   render(){
