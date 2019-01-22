@@ -77,11 +77,7 @@ class Game < ApplicationRecord
     if self.deck.cards.length < 1
       false
     else
-      if self.playedAtLeastTwo
-        true
-      else
-        false
-      end
+      self.playedAtLeastTwo ? true : false
     end
   end 
 
