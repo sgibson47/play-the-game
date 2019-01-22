@@ -5,18 +5,12 @@ function NavBar (){
 
   return (
     <div className="NavBar">
-      <Link to='/'>
-        <h1 className='NavBar-Header'>Play The Game</h1>
-      </Link>
-      <Link to='/new'>
-        New Game
-      </Link>| 
-      <Link to='/games'>
-        Index of Games
-      </Link>| 
-      <Link to='/rules'>
-        Rules
-      </Link>
+      <Link to='/'><h1 className='NavBar-Header'>Play The Game</h1></Link>
+      <Link to='/new'>New Game</Link>
+      | 
+      <Link to='/games'>Index of Games</Link>
+      | 
+      <Link to='/rules'>Rules</Link>
     </div>
   );
 };
