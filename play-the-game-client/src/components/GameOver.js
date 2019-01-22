@@ -12,9 +12,7 @@ class GameOver extends Component {
 
   render(){
     return (
-      <div 
-        className={this.GameOverClassName()} 
-        >
+      <div className={this.GameOverClassName()} >
         <h1>GAME OVER</h1>
       </div>
     )
