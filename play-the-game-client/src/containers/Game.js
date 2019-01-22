@@ -63,16 +63,9 @@ class Game extends Component {
   }
 
   render(){
-    // console.log("From Game")
-    // debugger
     return(
       <div className="game">
-        <GameOver 
-          render={this.props.currentGame.status}
-          // this ought to depend on this.props.currentGame.status
-          // Game.find_by(id: 1) has status true
-          // soo for now true === incomplete game
-        />
+        <GameOver render={this.props.currentGame.status}/>
         <h1 className='GameH1'>{this.props.currentGame.playerName}'s Game</h1>
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
         <Piles 
@@ -88,7 +81,6 @@ class Game extends Component {
           deselectCard={this.props.deselectCard}
           deselectPile={this.props.deselectPile}
           render={this.validMoveSelected()}
-          // ¿change render to className
           gameId={this.props.match.params.gameId}
         />
         <BadMove render={this.invalidMoveSelected()}/>
