@@ -53,7 +53,14 @@ class Api::GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:status, :playerName,:endGame, :endTurn, {newMove: [:card_id, :pile_id]})
+    params.require(:game)
+      .permit(
+        :status, 
+        :playerName,
+        :endGame, 
+        :endTurn, 
+        {newMove: 
+          [:card_id, :pile_id]})
   end
 
   def dealUpToSeven(game)
