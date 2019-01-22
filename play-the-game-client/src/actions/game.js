@@ -34,13 +34,6 @@ export const deselectPile = () => {
   }
 }
 
-export const updateTopCard = data => {
-  return{
-    type: 'UPDATE_TOP_CARD',
-    data
-  }
-}
-
 const setGames = games => {
   return{
     type: 'GET_GAMES_SUCCESS',
