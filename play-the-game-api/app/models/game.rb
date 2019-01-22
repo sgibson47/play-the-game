@@ -34,12 +34,10 @@ class Game < ApplicationRecord
       if topCards[0] == nil || topCards[1] == nil
         array.push(true)
       elsif topCards[0] != nil && topCards[1] == nil 
-        # evaluate if card can be played on topCards[0]
         card.value < topCards[0].value ? array.push(false) : array.push(true)
       elsif topCards[0] == nil && topCards[1] != nil
-        # evaluate if card can be played on topCards[1]
         card.value < topCards[1].value ? array.push(false) : array.push(true)
-      else # if neither topCards are nil 
+      else 
         if card.value < topCards[0].value && card.value < topCards[1].value
           array.push(false)
         else
@@ -57,12 +55,10 @@ class Game < ApplicationRecord
       if topCards[0] == nil || topCards[1] == nil
         array.push(true)
       elsif topCards[0] != nil && topCards[1] == nil 
-        # evaluate if card can be played on topCards[0]
         card.value > topCards[0].value ? array.push(false) : array.push(true)
       elsif topCards[0] == nil && topCards[1] != nil
-        # evaluate if card can be played on topCards[1]
         card.value > topCards[1].value ? array.push(false) : array.push(true)
-      else # if neither topCards are nil 
+      else 
         if card.value > topCards[0].value && card.value > topCards[1].value
           array.push(false)
         else
@@ -95,18 +91,12 @@ class Game < ApplicationRecord
 
   def over
     if self.deck.cards.length == 0 && self.hand.cards.length == 0
-      # win
       true 
     elsif self.validMoveAvailable
-      # if there's a valid move, game's not over 
       false
     elsif !self.validMoveAvailable && self.canDealMoreCardsToHand
-      # if you don't have a valid move in hand, but can get additional cards
-      # game's not over
       false
     elsif !self.validMoveAvailable && !self.canDealMoreCardsToHand
-      # if you don't have a valid move in hand and can't get additional cards
-      # game's over
       true
     end
   end
