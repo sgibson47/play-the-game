@@ -24,7 +24,7 @@ function Rules (){
 
       <h3>Basic Game Play</h3>
 
-        <p>At the start o f a game, the 1 & 100 cards will be laid out to start the piles and the player will be dealt 7 cards from the the deck into their hand. </p>
+        <p>At the start of a game, the 1 & 100 cards will be laid out to start the piles and the player will be dealt 7 cards from the the deck into their hand. </p>
 
         <p>Each turn, a player must play at least 2 cards from their hand.</p>
 
