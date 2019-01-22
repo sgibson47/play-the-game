@@ -70,11 +70,7 @@ class Game < ApplicationRecord
   end
 
   def validMoveAvailable
-    if !self.playableOnAsc.include?(true) && !self.playableOnDesc.include?(true)
-      false
-    else 
-      true
-    end
+    !self.playableOnAsc.include?(true) && !self.playableOnDesc.include?(true) ? false : true
   end
 
   def canDealMoreCardsToHand
