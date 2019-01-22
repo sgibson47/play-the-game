@@ -2,7 +2,7 @@ const initialState = []
 
 export default (state = initialState, action) => {
   switch(action.type){
-    case 'GET_GAMES_SUCCESS':
+    case 'SET_GAMES':
       return action.games
 
     default:

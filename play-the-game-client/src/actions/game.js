@@ -36,7 +36,7 @@ export const deselectPile = () => {
 
 const setGames = games => {
   return{
-    type: 'GET_GAMES_SUCCESS',
+    type: 'SET_GAMES',
     games
   }
 }
