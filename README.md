@@ -1,6 +1,10 @@
 # Play The Game
 
-## How to get Play The Game up & running
+### React & Redux Portfolio Project
+
+## About 
+
+## Usage
 
 ### download this entire directory
 
@@ -10,15 +14,11 @@
 
 The backend for Play The Game is held in a folder called 'play-the-game-api' in the directory you just downloaded.
 
-#### open a terminal window & navigate to /play-the-game/play-the-game-api
-
 run `cd <wherever you stored the app>/play-the-game/play-the-game-api`
 
-#### create a local database
+run `bundle install`
 
 run `rake db:migrate`
-
-#### start up backend
 
 run `rails s -p 3001`
 
@@ -28,17 +28,21 @@ Make sure to add the -p option because this application relies on the backend be
 
 ### get the frontend up and running
 
-#### open a terminal window & navigate to /play-the-game/play-the-game-client
-
 run `cd <wherever you stored the app>/play-the-game/play-the-game-client`
 
-#### run the app
+run `npm install`
 
 run `npm start`
 
 This will run the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view the app in the browser and start playing The Game.
 
+## Contributing
 
-If you've got 
+Bug reports and pull requests are welcome on GitHub at [https://github.com/sgibson47/play-the-game](https://github.com/sgibson47/play-the-game).
+
+
+## License
+
+The app is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT)
 
