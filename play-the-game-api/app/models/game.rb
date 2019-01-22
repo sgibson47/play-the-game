@@ -4,11 +4,7 @@ class Game < ApplicationRecord
   has_one :hand
 
   def playedAtLeastTwo
-    if self.moves <2
-      false
-    else
-      true
-    end
+    self.moves <2 ? false : true
   end
 
   def topMostCardsAsc
