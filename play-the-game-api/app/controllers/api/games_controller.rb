@@ -2,18 +2,17 @@ class Api::GamesController < ApplicationController
   before_action :set_game, only: [:show, :update, :destroy]
 
   def index
-    render json: Game.all, include: [:id, :status, :playerName]
+    render json: Game.all, include: [:id, :playerName]
   end
 
   def show
-    # @game = Game.find_by(id: params[:id])
     render json: @game
   end
 
   def create
-    # make a new game with the playerName
     game = Game.create(game_params)
     setUpNewGame(game)
+    
     if game.save
       @game = Game.find_by(id: game.id)
       render json: @game
@@ -86,22 +85,21 @@ class Api::GamesController < ApplicationController
   end
 
   def setUpNewGame(game)
-    # set status to true
     game.status = true
-    # set moves counter to 0
+
     game.moves = 0
-    # make a deck
+
     Deck.create(game_id: game.id)
-    # give the deck cards 2-99, already shuffled
+
     (2..99).to_a.shuffle!.each do |value|
       card = game.deck.cards.create({"value": value})
     end
-    # make a hand
+
     Hand.create(game_id: game.id)
-    # make 2 asc piles
+
     2.times{Pile.create({"asc":true, game_id: game.id})}
-    # make 2 desc piles
     2.times{Pile.create({"asc":false, game_id: game.id})}
+
     game.save
     dealUpToSeven(game)
   end
