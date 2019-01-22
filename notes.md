@@ -542,7 +542,16 @@ https://reacttraining.com/react-router/web/example/auth-workflow
     enable GET /games/:gameId to 
     display some warning/ notification to the user when they browse to a :gameId that doesn't have a game in the db associated with it ( game was deleted or hasn't been created )
 
+2019-1-22:
 
+X 1. Clean up code - delete unused code and try to dry out & simplify where possible. 
+  (keep it running the whole time to test for whether that breaks things 
+    (this is why I wish I'd written a test suite . . .))
+2. Give application a ReadMe 
+---
+3. enable GET /games/:gameId to 
+    display some warning/ notification to the user when they browse to a :gameId that doesn't have a game in the db associated with it ( game was deleted or hasn't been created )
+4. Figure out & tenatively schedule putting Play The Game up on Heroku
 
 
 
