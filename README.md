@@ -4,6 +4,10 @@
 
 ## About 
 
+This app was created to practice using React, Redux and Rails to develop web applications.
+
+It lets you play rounds of The Game. You can create a new game to play or play a previously started game. 
+
 ## Usage
 
 ### download this entire directory
