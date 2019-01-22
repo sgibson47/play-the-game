@@ -3,7 +3,7 @@ const API_URL = "http://localhost:3001/api"
 //** Action Creators **
 const setGame = currentGame => {
   return{
-    type: 'GET_GAME_SUCCESS',
+    type: 'SET_GAME',
     currentGame
   }
 }

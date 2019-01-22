@@ -44,7 +44,7 @@ const initialState =
 
 export default (state = initialState, action) => {
   switch(action.type){
-    case 'GET_GAME_SUCCESS':
+    case 'SET_GAME':
       return action.currentGame
 
     case 'UPDATE_TOP_CARD':
