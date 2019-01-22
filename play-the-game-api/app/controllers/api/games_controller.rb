@@ -1,5 +1,5 @@
 class Api::GamesController < ApplicationController
-  before_action :set_game, only: [:show, :update, :destroy]
+  before_action :set_game, only: [:show, :update]
 
   def index
     render json: Game.all, include: [:id, :playerName]
@@ -45,13 +45,6 @@ class Api::GamesController < ApplicationController
     render json: game
   end
 
-  def destroy
-    if @game.destroy
-      render status: 204
-    else
-      render json: {message: "Unable to delete game"}, status: 400
-    end
-  end
 
   private
 
