@@ -1,38 +1,44 @@
-# README
+# Play The Game
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to get Play The Game up & running
 
-Things you may want to cover:
+### download this entire directory
 
-* Ruby version
+`git clone git@github.com:sgibson47/play-the-game.git`
 
-* System dependencies
+### get backend up & running
 
-* Configuration
+The backend for Play The Game is held in a folder called 'play-the-game-api' in the directory you just downloaded.
 
-* Database creation
+#### open a terminal window & navigate to /play-the-game/play-the-game-api
 
-* Database initialization
+run `cd <wherever you stored the app>/play-the-game/play-the-game-api`
 
-* How to run the test suite
+#### create a local database
 
-* Services (job queues, cache servers, search engines, etc.)
+run `rake db:migrate`
 
-* Deployment instructions
+#### start up backend
 
-* ...
+run `rails s -p 3001`
+
+`rails s` launches a web server and will give you access to the application through a web browser. `-p 3001` tells the web server to serve up the application at the 3001 port instead of the default 3000.  
+
+Make sure to add the -p option because this application relies on the backend being ported to 3001 while the frontent uses the default 3000. 
+
+### get the frontend up and running
+
+#### open a terminal window & navigate to /play-the-game/play-the-game-client
+
+run `cd <wherever you stored the app>/play-the-game/play-the-game-client`
+
+#### run the app
+
+run `npm start`
+
+This will run the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view the app in the browser and start playing The Game.
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
+If you've got 
 
