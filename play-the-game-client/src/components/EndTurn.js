@@ -17,12 +17,8 @@ class EndTurn extends Component {
   }
 
   render(){
-    // console.log("From EndTurn")
-    // debugger
     return (
-      <div 
-        className={this.endTurnClassName()} 
-        >
+      <div className={this.endTurnClassName()} >
         <button onClick={this.endTurn}>EndTurn</button>
       </div>
     )
