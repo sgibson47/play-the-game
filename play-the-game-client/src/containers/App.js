@@ -19,13 +19,9 @@ import {
   newGame } from '../actions/game'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-const API_URL = "http://localhost:3001/api"
-
 class App extends Component {
 
   render(){
-    // console.log("From App")
-    // debugger
     return(
       <Router>
         <div className="App">
