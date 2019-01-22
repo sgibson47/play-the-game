@@ -13,9 +13,6 @@ class MakeMove extends Component {
     const gameId = this.props.gameId
 
     this.props.makeMove(move, gameId)
-    // makes move in db
-    // this.props.addMove(cardId)
-    // dispatches a reducer that increments redux store's newMoves 
     this.props.deselectCard()
     this.props.deselectPile()
   }
@@ -29,12 +26,8 @@ class MakeMove extends Component {
   }
 
   render(){
-    // console.log("From MakeMove")
-    // debugger
     return (
-      <div 
-        className={this.makeMoveClassName()} 
-        >
+      <div className={this.makeMoveClassName()} >
         Nice, that's a valid move.<br/> 
         <button onClick={this.makeMove}>Play card</button>
       </div>
