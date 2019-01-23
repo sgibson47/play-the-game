@@ -43,10 +43,6 @@ class Game < ApplicationRecord
         # add true to the array 
         # representing that the card could be played on an ascending pile
         array.push(true)
-      elsif topCards[0] != nil && topCards[1] == nil 
-        card.value < topCards[0].value ? array.push(false) : array.push(true)
-      elsif topCards[0] == nil && topCards[1] != nil
-        card.value < topCards[1].value ? array.push(false) : array.push(true)
       else 
         if card.value < topCards[0].value && card.value < topCards[1].value
           array.push(false)
@@ -64,10 +60,6 @@ class Game < ApplicationRecord
     self.hand.cards.each do |card|
       if topCards[0] == nil || topCards[1] == nil
         array.push(true)
-      elsif topCards[0] != nil && topCards[1] == nil 
-        card.value > topCards[0].value ? array.push(false) : array.push(true)
-      elsif topCards[0] == nil && topCards[1] != nil
-        card.value > topCards[1].value ? array.push(false) : array.push(true)
       else 
         if card.value > topCards[0].value && card.value > topCards[1].value
           array.push(false)
