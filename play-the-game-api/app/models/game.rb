@@ -43,10 +43,17 @@ class Game < ApplicationRecord
         # add true to the array 
         # representing that the card could be played on an ascending pile
         array.push(true)
+      # if neither top card is nil, i.e. cards have been played on the ascending piles
       else 
+        # check if the card could not be played on either pile
+        # have to count up on ascending piles, 
+        # so if the card's value is less than both top cards, 
+        # it cannot be played on either pile -- add false to the array 
         if card.value < topCards[0].value && card.value < topCards[1].value
           array.push(false)
+        # if the card's value is not less than both top cards
         else
+          # it can be played on at least one of the piles -- add true to the array 
           array.push(true)
         end
       end
@@ -55,6 +62,8 @@ class Game < ApplicationRecord
   end
 
   def playableOnDesc
+    # same logic as playableOnAsc
+    # but, instead, we evaluate if the card's value is greater than the pile's top most card
     topCards = self.topMostCardsDesc
     array = []
     self.hand.cards.each do |card|
