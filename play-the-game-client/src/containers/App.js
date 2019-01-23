@@ -6,7 +6,10 @@ import NavBar from '../components/NavBar'
 import Rules from '../components/Rules'
 import NewGame from '../components/NewGame'
 import Root from '../components/Root'
+
 import {connect} from 'react-redux'
+// used to subscribe a component to the Redux store
+
 import {
   getGame, 
   selectCard, 
@@ -17,7 +20,15 @@ import {
   endTurn, 
   getGames, 
   newGame } from '../actions/game'
+
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+// When rendering a component through a Route, 
+// the component recieves props from the Route automatically 
+// that contain info on the route.
+// If you want to pass additional data to the component,
+// use the render attribute.
+// The render attr takes an anonymous function, and
+// the props from the route  are available as an argument for the function.
 
 class App extends Component {
 
