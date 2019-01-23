@@ -1,11 +1,19 @@
 class Api::GamesController < ApplicationController
+  # call set_game helper method before the code inside the show and update actions
   before_action :set_game, only: [:show, :update]
 
   def index
+    # respond with json representing all the games in the database
+    # but, only include their id and playerName attributes
+    # limiting the data sent to only what's used by /games
     render json: Game.all, include: [:id, :playerName]
   end
 
   def show
+    # respond with json representing the game stored in @game by set_game
+    # b/c I added gem 'active_model_serializers' in the Gemfile and
+    # created a GameSerializer in a serializers folder in the app directory
+    # by default, Rails will use the GameSerializer when I call render json: @game
     render json: @game
   end
 

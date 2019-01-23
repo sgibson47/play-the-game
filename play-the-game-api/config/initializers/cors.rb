@@ -5,6 +5,10 @@
 
 # Read more: https://github.com/cyu/rack-cors
 
+# Uncommented out the following block in order to configure the backend with rack-cors
+# changed "origins 'example.com'" to "origins 'localhost:3000'" 
+# to allow react app running there (my frontend) to make calls to the Rails API
+
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins 'localhost:3000'
