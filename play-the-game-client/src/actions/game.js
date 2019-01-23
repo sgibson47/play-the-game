@@ -1,6 +1,10 @@
 const API_URL = "http://localhost:3001/api"
 
 //** Action Creators **
+
+// Instead of writing the action object yourself, 
+// you call the function, which returns the object. 
+
 const setGame = currentGame => {
   return{
     type: 'SET_GAME',
