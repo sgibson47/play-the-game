@@ -5,7 +5,7 @@ class GameSerializer < ActiveModel::Serializer
   attributes :id, :status, :playerName, :moves
 
   # the model's associations that should be included when a game serialized
-  has_many :piles, serializer: PileSerializer
-  has_one :deck, serializer: DeckSerializer
-  has_one :hand, serializer: HandSerializer
+  has_many :piles
+  has_one :deck
+  has_one :hand
 end
