@@ -113,7 +113,7 @@ export const newGame = (playerName, history) =>{
     })
       .then(response => response.json())
       .then(game => {
-        
+        dispatch(setGame(game));
         history.push(`/games/${game.id}`);
       })
       .catch(error => console.log(error))
