@@ -59,7 +59,11 @@ class Game extends Component {
   
   componentDidMount(){
     const gameId = this.props.match.params.gameId
-    this.props.getGame(gameId)
+    if(this.props.currentGame.id === gameId){
+
+    }else{
+      this.props.getGame(gameId)
+    }
   }
 
   render(){
