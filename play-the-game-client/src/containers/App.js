@@ -22,6 +22,8 @@ import {
   newGame } from '../actions/game'
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+// Enables client side routing
+
 // When rendering a component through a Route, 
 // the component recieves props from the Route automatically 
 // that contain info on the route.

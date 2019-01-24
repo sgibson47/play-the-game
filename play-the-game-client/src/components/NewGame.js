@@ -10,6 +10,22 @@ class NewGame extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    // binding makes 'this' refer to the correct thing in the callback
+    // In JS, methods are not bound by default. 
+    // If you forget to bind your event handler, 
+    // 'this' will be undefined when the function is actually called. 
+    // If you don't want to bind, you could
+    // 1) use public class fields syntax 
+      // handleChange = (event) => {
+      //   this.setState({playerName: event.target.value})
+      // }
+      // OR
+    // 2) use an arrow function callback
+      // handleChange(event){
+      //   this.setState({playerName: event.target.value})
+      // }
+      // ...
+      // onChange={(event)=>this.handleChange(event)}
   }
 
   handleChange(event){
