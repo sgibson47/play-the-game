@@ -35,9 +35,7 @@ class NewGame extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    console.log('A')
     this.props.newGame(this.state.playerName, this.props.history)
-    console.log('B')
   }
 
   render(){

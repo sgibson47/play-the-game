@@ -103,7 +103,6 @@ export const getGames = () =>{
 }
 
 export const newGame = (playerName, history) =>{
-  console.log('C')
   return dispatch => {
     return fetch(`${API_URL}/games`, {
       method: 'POST',
@@ -114,11 +113,10 @@ export const newGame = (playerName, history) =>{
     })
       .then(response => response.json())
       .then(game => {
-        console.log('D')
+        
         history.push(`/games/${game.id}`);
       })
       .catch(error => console.log(error))
   }
-  console.log('E')
 }
 
