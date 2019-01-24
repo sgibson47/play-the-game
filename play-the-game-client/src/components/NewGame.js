@@ -26,6 +26,7 @@ class NewGame extends Component {
       // }
       // ...
       // onChange={(event)=>this.handleChange(event)}
+    // Avoid 2 because it will create a new callback each time the field is rendered
   }
 
   handleChange(event){
@@ -34,7 +35,9 @@ class NewGame extends Component {
 
   handleSubmit(event){
     event.preventDefault();
+    console.log('A')
     this.props.newGame(this.state.playerName, this.props.history)
+    console.log('B')
   }
 
   render(){

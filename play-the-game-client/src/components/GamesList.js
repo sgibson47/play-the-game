@@ -1,24 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import GameLink from './GameLink';
 
-function GamesList (props){
-  const games = props.games;
-  const makeLink = (game) =>{
-    return <Link to={`/games/${game.id}`}>
-      {`${game.playerName}'s game`}
-    </Link>
+class GamesList extends Component {
+
+  render(){
+    const games = this.props.games;
+    const listItems = games.map((game)=><GameLink game={game}/>);
+    return (
+      <div>
+        <ul>
+          {listItems}
+        </ul>
+      </div>
+    );
   }
-  const listItems = games.map((game)=>
-    <li key={game.id}>{makeLink(game)}</li>
-    )
-
-  return (
-    <div>
-      <ul>
-        {listItems}
-      </ul>
-    </div>
-  );
 };
 
 export default GamesList;
