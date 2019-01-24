@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import GamesList from '../components/GamesList';
+import GamesList from './GamesList';
 
 class GamesPage extends Component {
   componentWillMount(){
