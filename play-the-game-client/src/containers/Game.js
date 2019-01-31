@@ -71,7 +71,14 @@ class Game extends Component {
     return(
       <div className="game">
         <GameOver render={this.props.currentGame.status}/>
-        <DeckAndPiles/>
+        <DeckAndPiles
+          cardsLeft={this.props.currentGame.deck.cardCount}
+          player={this.props.currentGame.playerName}
+          piles={this.props.currentGame.piles}
+          selectedPile={this.props.selectedPile}
+          selectPile={this.props.selectPile}
+          deselectPile={this.props.deselectPile}
+        />
         <HeaderAndDeck
           cardsLeft={this.props.currentGame.deck.cardCount}
           player={this.props.currentGame.playerName}
