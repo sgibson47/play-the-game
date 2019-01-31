@@ -7,18 +7,20 @@
   overflow: auto;
   padding: 1%;
   background-color: rgba(187, 182, 178, .8);
-  margin: 5%;
+  margin: 2%;
 }
 
 .GameH1{
-  margin-left: 15%;
+  margin-left: 5%;
 }
 
 .deck {
   padding: 2%;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 0%;
+  margin-right: 2%;
   text-align: center;
+  float: left;
+  margin-top: 10%;
 }
 
 .deck .deckCard {
@@ -32,21 +34,22 @@
 }
 
 .piles{
-  clear: left;
+  /*clear: left;*/
   text-align: center;
   overflow: auto;
+  float: left;
 }
 
 .pile{
   background-color: #837C76 ;
   float: left;
-  width: 20%;
+  width: 15%;
   margin: 1%;
   padding: 1%;
 }
 
 .pile p{
-  clear: left;
+  /*clear: left;*/
   padding: 1%;
 }
 
@@ -65,12 +68,12 @@
 
 .PileCard{
   background-color: #b3e6ff;
-  width: 40%;
+  width: 30%;
   border-radius: 7px;
   width: 125px;
   height: 175px;
   float: left;
-  margin-left: 20%;
+  margin-left: 10%;
   margin-bottom: 6%;
   text-align: center;
 }
@@ -199,7 +202,12 @@
 .NavBar{
   text-align: center;
   background-color: #837C76;
-  padding-bottom: 2%;
+  padding-bottom: 1%;
+}
+
+.NavBar h1{
+  margin-top: 0%;
+  margin-bottom: 1%;
 }
 
 .NavBar a{
