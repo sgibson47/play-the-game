@@ -6,6 +6,7 @@ import BadMove from '../components/BadMove'
 import EndTurn from '../components/EndTurn'
 import GameOver from '../components/GameOver'
 import HeaderAndDeck from './HeaderAndDeck'
+import DeckAndPiles from './DeckAndPiles'
 
 class Game extends Component {
 
@@ -70,6 +71,7 @@ class Game extends Component {
     return(
       <div className="game">
         <GameOver render={this.props.currentGame.status}/>
+        <DeckAndPiles/>
         <HeaderAndDeck
           cardsLeft={this.props.currentGame.deck.cardCount}
           player={this.props.currentGame.playerName}
