@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import Hand from './Hand'
-import Piles from './Piles'
 import MakeMove from '../components/MakeMove'
 import BadMove from '../components/BadMove'
 import EndTurn from '../components/EndTurn'
 import GameOver from '../components/GameOver'
-import HeaderAndDeck from './HeaderAndDeck'
 import DeckAndPiles from './DeckAndPiles'
 
 class Game extends Component {
@@ -74,16 +72,6 @@ class Game extends Component {
         <DeckAndPiles
           cardsLeft={this.props.currentGame.deck.cardCount}
           player={this.props.currentGame.playerName}
-          piles={this.props.currentGame.piles}
-          selectedPile={this.props.selectedPile}
-          selectPile={this.props.selectPile}
-          deselectPile={this.props.deselectPile}
-        />
-        <HeaderAndDeck
-          cardsLeft={this.props.currentGame.deck.cardCount}
-          player={this.props.currentGame.playerName}
-        />
-        <Piles 
           piles={this.props.currentGame.piles}
           selectedPile={this.props.selectedPile}
           selectPile={this.props.selectPile}
