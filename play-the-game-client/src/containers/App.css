@@ -10,20 +10,25 @@
   margin: 2%;
 }
 
+.HeaderAndDeck{
+  text-align: center;
+  float: left;
+}
+
 .GameH1{
   margin-left: 5%;
 }
 
-.deck {
+/*.deck {
   padding: 2%;
   margin-left: 0%;
   margin-right: 2%;
   text-align: center;
   float: left;
   margin-top: 10%;
-}
+}*/
 
-.deck .deckCard {
+.deckCard {
   background-color: #b3e6ff;
   width: 125px;
   height: 175px;
