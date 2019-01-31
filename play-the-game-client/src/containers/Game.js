@@ -6,6 +6,7 @@ import MakeMove from '../components/MakeMove'
 import BadMove from '../components/BadMove'
 import EndTurn from '../components/EndTurn'
 import GameOver from '../components/GameOver'
+import HeaderAndDeck from './HeaderAndDeck'
 
 class Game extends Component {
 
@@ -72,6 +73,7 @@ class Game extends Component {
         <GameOver render={this.props.currentGame.status}/>
         <h1 className='GameH1'>{this.props.currentGame.playerName}'s Game</h1>
         <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
+        <HeaderAndDeck/>
         <Piles 
           piles={this.props.currentGame.piles}
           selectedPile={this.props.selectedPile}
