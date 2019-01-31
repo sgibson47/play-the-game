@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Deck from '../components/Deck'
 import Hand from './Hand'
 import Piles from './Piles'
 import MakeMove from '../components/MakeMove'
@@ -71,8 +70,6 @@ class Game extends Component {
     return(
       <div className="game">
         <GameOver render={this.props.currentGame.status}/>
-        <h1 className='GameH1'>{this.props.currentGame.playerName}'s Game</h1>
-        <Deck cardsLeft={this.props.currentGame.deck.cardCount}/>
         <HeaderAndDeck
           cardsLeft={this.props.currentGame.deck.cardCount}
           player={this.props.currentGame.playerName}
