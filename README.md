@@ -8,7 +8,7 @@ This app was created to practice using React, Redux and Rails to develop web app
 
 It lets you play rounds of The Game. You can create a new game to play or play a previously started game. 
 
-##Demo
+## Demo
 
 Check out a short demo [here](https://www.youtube.com/watch?v=My73HaJEukI).
 
