@@ -1,6 +1,9 @@
 {
   "name": "play-the-game",
   "version": "1.0.0",
+  "engines":{
+    "node": "10.14.1"
+  },
   "description": "Rails API & React app to play IDW Games' The Game",
   "main": "index.js",
   "directories": {
