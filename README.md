@@ -10,26 +10,9 @@ It uses a Rails API backend and a React frontend to let you play rounds of The G
 
 ## Demo
 
-Check out a short demo [here](https://www.youtube.com/watch?v=My73HaJEukI).
+Test out the app and play The Game yourself here:
 
-## Usage
-
-### download this entire directory
-
-`git clone git@github.com:sgibson47/play-the-game.git`
-
-### get backend up & running
-
-From the play-the-game directory:
-run `bundle install`
-
-run `rake db:migrate`
-
-run `rails s -p 3001`
-
-`rails s` launches a web server and will give you access to the application through a web browser. `-p 3001` tells the web server to serve up the application at the 3001 port instead of the default 3000.  
-
-Make sure to add the -p option because this application relies on the backend being ported to 3001 while the frontend uses the default 3000. 
+[Play The Game](https://sam-gibson-play-the-game.herokuapp.com/)
 
 ### get the frontend up and running
 
