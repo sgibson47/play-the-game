@@ -17,9 +17,12 @@ class Root extends Component {
         <br/>
         Or, you can check out all the games that have been started by clicking on "Index of Games" above. </p>
         <div> ---------------------------------------</div>
-        <div>Play The Game was developed with a Ruby on Rails API backend 
+        <div>
+        Play The Game was developed with a Ruby on Rails API backend 
         and a React with Redux frontend as a portfolio project for 
-        the <br/>Flatiron School's Online Full Stack Web Development Program. </div>
+        the <br/>Flatiron School's Online Full Stack Web Development Program.<br/>
+        Check out the code on GitHub <a href="https://github.com/sgibson47/play-the-game">here</a>.
+        </div>
       </div>
     )
   }
