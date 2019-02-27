@@ -25827,3 +25827,48 @@ Processing by Api::GamesController#show as */*
 Completed 200 OK in 40ms (Views: 29.5ms | ActiveRecord: 8.5ms)
 
 
+Started GET "/api/games" for ::1 at 2019-02-27 16:54:51 -0600
+  [1m[35m (9.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/samanthagibson/.rvm/gems/ruby-2.3.3/gems/rack-2.0.6/lib/rack/runtime.rb:22
+Processing by Api::GamesController#index as */*
+  [1m[36mGame Load (18.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ /Users/samanthagibson/.rvm/gems/ruby-2.3.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.67ms)
+Completed 200 OK in 114ms (Views: 45.3ms | ActiveRecord: 54.9ms)
+
+
+Started GET "/api/games/16" for ::1 at 2019-02-27 16:54:55 -0600
+Processing by Api::GamesController#show as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/games_controller.rb:60
+[active_model_serializers]   [1m[36mPile Load (7.1ms)[0m  [1m[34mSELECT "piles".* FROM "piles" WHERE "piles"."game_id" = $1[0m  [["game_id", 16]]
+[active_model_serializers]   ↳ /Users/samanthagibson/.rvm/gems/ruby-2.3.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers]   [1m[36mCard Load (26.2ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" WHERE "cards"."whereIsCard_id" = $1 AND "cards"."whereIsCard_type" = $2 ORDER BY "cards"."updated_at" DESC LIMIT $3[0m  [["whereIsCard_id", 21], ["whereIsCard_type", "Pile"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/pile_serializer.rb:10
+[active_model_serializers]   [1m[36mCard Load (3.9ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" WHERE "cards"."whereIsCard_id" = $1 AND "cards"."whereIsCard_type" = $2 ORDER BY "cards"."updated_at" DESC LIMIT $3[0m  [["whereIsCard_id", 22], ["whereIsCard_type", "Pile"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/pile_serializer.rb:10
+[active_model_serializers]   [1m[36mCard Load (3.3ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" WHERE "cards"."whereIsCard_id" = $1 AND "cards"."whereIsCard_type" = $2 ORDER BY "cards"."updated_at" DESC LIMIT $3[0m  [["whereIsCard_id", 23], ["whereIsCard_type", "Pile"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/pile_serializer.rb:10
+[active_model_serializers]   [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" WHERE "cards"."whereIsCard_id" = $1 AND "cards"."whereIsCard_type" = $2 ORDER BY "cards"."updated_at" DESC LIMIT $3[0m  [["whereIsCard_id", 24], ["whereIsCard_type", "Pile"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/pile_serializer.rb:10
+[active_model_serializers]   [1m[36mDeck Load (2.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."game_id" = $1 LIMIT $2[0m  [["game_id", 16], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/samanthagibson/.rvm/gems/ruby-2.3.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCard Load (9.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."whereIsCard_id" = $1 AND "cards"."whereIsCard_type" = $2[0m  [["whereIsCard_id", 8], ["whereIsCard_type", "Deck"]]
+[active_model_serializers]   ↳ app/serializers/deck_serializer.rb:11
+[active_model_serializers]   [1m[36mHand Load (2.3ms)[0m  [1m[34mSELECT  "hands".* FROM "hands" WHERE "hands"."game_id" = $1 LIMIT $2[0m  [["game_id", 16], ["LIMIT", 1]]
+[active_model_serializers]   ↳ /Users/samanthagibson/.rvm/gems/ruby-2.3.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer.rb:387
+[active_model_serializers]   [1m[36mCard Load (5.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."whereIsCard_id" = $1 AND "cards"."whereIsCard_type" = $2[0m  [["whereIsCard_id", 6], ["whereIsCard_type", "Hand"]]
+[active_model_serializers]   ↳ /Users/samanthagibson/.rvm/gems/ruby-2.3.3/gems/active_model_serializers-0.10.8/lib/active_model_serializers/serializable_resource.rb:8
+[active_model_serializers] Rendered GameSerializer with ActiveModelSerializers::Adapter::Attributes (220.82ms)
+Completed 200 OK in 233ms (Views: 133.3ms | ActiveRecord: 89.4ms)
+
+
+Started GET "/api/games" for ::1 at 2019-02-27 16:55:04 -0600
+Processing by Api::GamesController#index as */*
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ /Users/samanthagibson/.rvm/gems/ruby-2.3.3/gems/active_model_serializers-0.10.8/lib/active_model/serializer/collection_serializer.rb:69
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.54ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.5ms)
+
+

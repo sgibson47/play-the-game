@@ -1,7 +1,7 @@
 {
   "name": "play-the-game",
   "version": "1.0.0",
-  "engines":{
+  "engines": {
     "node": "10.14.1"
   },
   "description": "Rails API & React app to play IDW Games' The Game",
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/sgibson47/play-the-game/issues"
   },
-  "homepage": "https://github.com/sgibson47/play-the-game#readme"
+  "homepage": "https://github.com/sgibson47/play-the-game#readme",
+  "dependencies": {
+    "redux-devtools-extension": "^2.13.8"
+  }
 }
