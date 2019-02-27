@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/sgibson47/play-the-game#readme",
   "dependencies": {
+    "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8"
   }
 }
