@@ -1,0 +1,22 @@
+{
+  "name": "play-the-game",
+  "version": "1.0.0",
+  "description": "Rails API & React app to play IDW Games' The Game",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgibson47/play-the-game.git"
+  },
+  "author": "Samantha Gibson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgibson47/play-the-game/issues"
+  },
+  "homepage": "https://github.com/sgibson47/play-the-game#readme"
+}
