@@ -1,7 +1,7 @@
 class Game < ApplicationRecord
-  has_many :piles
-  has_one :deck
-  has_one :hand
+  has_many :piles, dependent: :destroy
+  has_one :deck, dependent: :destroy
+  has_one :hand, dependent: :destroy
 
   # instance methods that build the ability to tell if a game is over 
 
