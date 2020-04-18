@@ -1,28 +1,12 @@
-import React, {Component} from 'react'
+import React from 'react'
+import {endTurn} from '../actions/game'
 
-class EndTurn extends Component {
-
-  endTurn = () =>{
-    const gameId = this.props.gameId
-
-    this.props.endTurn(gameId)
-  }
-
-  endTurnClassName = () => {
-    if(this.props.render){
-      return "EndTurn"
-    }else {
-      return "HideEndTurn"
-    }
-  }
-
-  render(){
-    return (
-      <div className={this.endTurnClassName()} >
-        <button onClick={this.endTurn}>EndTurn</button>
-      </div>
-    )
-  }
+const EndTurn =({render, gameId}) => {
+  return (
+    <div className={render ? "EndTurn" : "HideEndTurn"} >
+      <button onClick={endTurn(gameId)}>EndTurn</button>
+    </div>
+  )
 }
 
 export default EndTurn
