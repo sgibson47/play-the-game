@@ -21,6 +21,8 @@ class HandCard extends Component {
   }
 
   render(){
+    console.log("handacard");
+    
     return (
       <div className={`${this.handCardClassName()}`} onClick={this.handleOnClick}>
         <p>{this.props.card.value}</p>
