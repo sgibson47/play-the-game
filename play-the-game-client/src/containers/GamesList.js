@@ -5,7 +5,7 @@ class GamesList extends Component {
 
   render(){
     const games = this.props.games;
-    const listItems = games.map((game)=><GameLink key={game.id} game={game}/>);
+    const listItems = games.map((game)=><GameLink key={game.id} id={game.id} playerName={game.playerName}/>);
     return (
       <div>
         <ul>
