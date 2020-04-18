@@ -1,14 +1,13 @@
 import React from 'react'
 
-const Deck = (props) => (
-  
+const Deck = ({cardsLeft}) => (
     <div className="deckCard">
       <br/>
       <br/>
-      {props.cardsLeft}
+      {cardsLeft}
       <p>Cards left <br/> in the Deck</p>
     </div>
   
-)
+);
 
-export default Deck
+export default Deck;
